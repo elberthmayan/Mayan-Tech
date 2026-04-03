@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia | Corte de Respeito</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+</head>
+<body class="antialiased selection:bg-barber-gold selection:text-black">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center md:justify-start items-center h-20">
+                <div class="flex items-center gap-3">
+                    <i class="ph-fill ph-scissors text-barber-gold text-3xl"></i>
+                    <span class="font-serif font-black text-2xl tracking-widest text-white uppercase">
+                        NOME DA <span class="text-barber-gold">BARBEARIA</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=80" alt="Fundo Barbearia" class="w-full h-full object-cover opacity-30 grayscale">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/95 via-[#0a0a0a]/60 to-[#0a0a0a]"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="text-center max-w-4xl mx-auto">
+                <span class="text-barber-gold text-sm tracking-[0.4em] uppercase mb-4 block font-semibold">Estilo & Tradição</span>
+                <h1 class="text-5xl md:text-8xl font-serif font-black mb-6 text-white uppercase leading-none">
+                    O Seu Melhor <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-barber-gold to-yellow-600">Visual</span>.
+                </h1>
+                <p class="text-gray-400 mb-8 font-light max-w-xl mx-auto text-lg">
+                    Cortes clássicos, degradê impecável e toalha quente. A verdadeira experiência que todo homem merece.
+                </p>
+                
+                <div id="status-loja" class="mb-10 flex justify-center"></div>
+
+                <a href="#servicos" class="inline-flex items-center justify-center gap-2 bg-barber-gold text-black px-8 py-4 font-bold tracking-widest text-sm uppercase hover:bg-white transition duration-300">
+                    Ver Serviços <i class="ph-bold ph-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-24 bg-barber-card relative border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-barber-gold tracking-[0.3em] text-xs uppercase mb-2 font-bold">Nossa Tabela</h2>
+                <h3 class="text-4xl md:text-5xl font-serif font-black text-white uppercase">Serviços</h3>
+                <div class="w-16 h-1 bg-barber-gold mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="border border-white/10 bg-barber-dark p-6 hover:border-barber-gold/50 transition duration-300 flex justify-between items-center group">
+                    <div>
+                        <h4 class="text-xl font-serif font-bold text-white uppercase group-hover:text-barber-gold transition">Corte</h4>
+                        <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Degradê ou Social</p>
+                    </div>
+                    <div class="text-right flex flex-col items-end">
+                        <span class="text-barber-gold font-bold text-2xl">R$ 30</span>
+                        <button onclick="iniciarAgendamento('Corte', 'R$ 30,00')" class="text-[10px] uppercase tracking-widest text-white border-b border-white/30 hover:border-barber-gold hover:text-barber-gold mt-2 pb-1 transition">Agendar</button>
+                    </div>
+                </div>
+
+                <div class="border border-white/10 bg-barber-dark p-6 hover:border-barber-gold/50 transition duration-300 flex justify-between items-center group">
+                    <div>
+                        <h4 class="text-xl font-serif font-bold text-white uppercase group-hover:text-barber-gold transition">Barba</h4>
+                        <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Alinhamento e Toalha Quente</p>
+                    </div>
+                    <div class="text-right flex flex-col items-end">
+                        <span class="text-barber-gold font-bold text-2xl">R$ 25</span>
+                        <button onclick="iniciarAgendamento('Barba', 'R$ 25,00')" class="text-[10px] uppercase tracking-widest text-white border-b border-white/30 hover:border-barber-gold hover:text-barber-gold mt-2 pb-1 transition">Agendar</button>
+                    </div>
+                </div>
+
+                <div class="border border-white/10 bg-barber-dark p-6 hover:border-barber-gold/50 transition duration-300 flex justify-between items-center group">
+                    <div>
+                        <h4 class="text-xl font-serif font-bold text-white uppercase group-hover:text-barber-gold transition">Sobrancelha</h4>
+                        <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Limpeza na Navalha</p>
+                    </div>
+                    <div class="text-right flex flex-col items-end">
+                        <span class="text-barber-gold font-bold text-2xl">R$ 15</span>
+                        <button onclick="iniciarAgendamento('Sobrancelha', 'R$ 15,00')" class="text-[10px] uppercase tracking-widest text-white border-b border-white/30 hover:border-barber-gold hover:text-barber-gold mt-2 pb-1 transition">Agendar</button>
+                    </div>
+                </div>
+
+                <div class="border border-white/10 bg-barber-dark p-6 hover:border-barber-gold/50 transition duration-300 flex justify-between items-center group">
+                    <div>
+                        <h4 class="text-xl font-serif font-bold text-white uppercase group-hover:text-barber-gold transition">Pigmentação</h4>
+                        <p class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Cabelo ou Barba</p>
+                    </div>
+                    <div class="text-right flex flex-col items-end">
+                        <span class="text-barber-gold font-bold text-2xl">R$ 60</span>
+                        <button onclick="iniciarAgendamento('Pigmentação', 'R$ 60,00')" class="text-[10px] uppercase tracking-widest text-white border-b border-white/30 hover:border-barber-gold hover:text-barber-gold mt-2 pb-1 transition">Agendar</button>
+                    </div>
+                </div>
+
+                <div class="border border-barber-gold/30 bg-[#1a1510] p-6 hover:border-barber-gold transition duration-300 flex justify-between items-center group md:col-span-2 relative overflow-hidden mt-4">
+                    <div class="absolute top-0 left-0 bg-barber-gold text-black text-[9px] font-bold px-3 py-1 uppercase tracking-widest">Mais Pedido</div>
+                    <div class="mt-4 md:mt-0">
+                        <h4 class="text-2xl font-serif font-black text-white uppercase">Combo: Cabelo + Barba</h4>
+                        <p class="text-sm text-gray-400 mt-1">O trato completo no visual com desconto.</p>
+                    </div>
+                    <div class="text-right flex flex-col items-end">
+                        <span class="text-barber-gold font-bold text-3xl">R$ 50</span>
+                        <button onclick="iniciarAgendamento('Combo Cabelo e Barba', 'R$ 50,00')" class="bg-barber-gold text-black text-xs font-bold uppercase tracking-widest px-6 py-2 mt-3 hover:bg-white transition">Agendar Horário</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-2 border-t border-white/5">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
+            <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=500&q=80" alt="Corte" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-500 cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=500&q=80" alt="Barba" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-500 cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=500&q=80" alt="Corte" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-500 cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=500&q=80" alt="Barbearia" class="w-full h-64 object-cover grayscale hover:grayscale-0 transition duration-500 cursor-pointer">
+        </div>
+    </section>
+
+    <footer class="bg-barber-dark py-16 border-t border-barber-gold/20">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
+            <i class="ph-fill ph-scissors text-barber-gold text-5xl mb-4"></i>
+            <span class="font-serif font-black text-3xl tracking-widest text-white uppercase mb-8">
+                NOME DA <span class="text-barber-gold">BARBEARIA</span>
+            </span>
+
+            <div class="flex flex-col md:flex-row gap-8 text-gray-400 mb-10">
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-map-pin text-barber-gold text-xl"></i>
+                    <span class="text-sm">Rua dos Barbeiros, 123 - Centro</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-instagram-logo text-barber-gold text-xl"></i>
+                    <span class="text-sm">@instagram_dabarbearia</span>
+                </div>
+            </div>
+
+            <p class="text-xs text-gray-600 tracking-widest uppercase">Modelo demonstrativo para portfólio.</p>
+        </div>
+    </footer>
+
+    <div id="checkout-overlay" class="fixed inset-0 bg-black/90 z-[60] hidden transition-opacity duration-300 opacity-0 backdrop-blur-sm" onclick="fecharAgendamento()"></div>
+
+    <div id="checkout-drawer" class="fixed top-0 right-0 h-full w-full md:w-[400px] bg-barber-card border-l border-barber-gold/30 z-[70] transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col">
+        
+        <div class="flex justify-between items-center p-6 border-b border-white/10 shrink-0 bg-barber-dark">
+            <h2 class="font-serif font-black uppercase tracking-widest text-xl text-white">Agendar <span class="text-barber-gold">Horário</span></h2>
+            <button onclick="fecharAgendamento()" class="text-gray-400 hover:text-barber-gold transition">
+                <i class="ph-bold ph-x text-2xl"></i>
+            </button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+            
+            <div class="bg-black/50 border border-barber-gold/20 p-4 rounded-lg text-center">
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Serviço Selecionado</p>
+                <h3 class="text-lg font-bold text-white uppercase" id="servico-display">Nome do Servico</h3>
+                <span class="text-barber-gold font-bold" id="preco-display">R$ 00,00</span>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Seu Nome / Apelido</label>
+                    <input type="text" id="input-nome" placeholder="Como devemos te chamar?" class="w-full bg-[#0a0a0a] border border-white/10 text-white p-3 text-sm focus:border-barber-gold outline-none transition rounded">
+                </div>
+                
+                <div>
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Preferência de Profissional</label>
+                    <select id="select-profissional" class="w-full bg-[#0a0a0a] border border-white/10 text-white p-3 text-sm focus:border-barber-gold outline-none transition rounded appearance-none">
+                        <option value="Qualquer Profissional">Qualquer profissional disponível</option>
+                        <option value="Carlos (Especialista)">Carlos (Especialista)</option>
+                        <option value="Rafael (Barbeiro)">Rafael (Barbeiro)</option>
+                    </select>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Data</label>
+                        <input type="date" id="input-data" class="w-full bg-[#0a0a0a] border border-white/10 text-white p-3 text-sm focus:border-barber-gold outline-none transition rounded">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Hora</label>
+                        <input type="time" id="input-hora" class="w-full bg-[#0a0a0a] border border-white/10 text-white p-3 text-sm focus:border-barber-gold outline-none transition rounded">
+                    </div>
+                </div>
+
+                <div class="mt-2">
+                    <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Forma de Pagamento</label>
+                    <select id="select-pagamento" class="w-full bg-[#0a0a0a] border border-white/10 text-white p-3 text-sm focus:border-barber-gold outline-none transition rounded appearance-none">
+                        <option value="Pix">Pix</option>
+                        <option value="Cartão (Crédito/Débito)">Cartão (Crédito/Débito)</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="p-6 border-t border-white/10 bg-barber-dark shrink-0">
+            <button onclick="finalizarAgendamento()" class="w-full py-4 flex items-center justify-center gap-2 text-sm tracking-widest uppercase bg-barber-gold text-black font-bold hover:bg-white transition rounded">
+                <i class="ph-bold ph-whatsapp text-xl"></i> Solicitar Horário
+            </button>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

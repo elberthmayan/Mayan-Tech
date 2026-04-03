@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advocacia Prime | Presença, clareza e autoridade</title>
+  <meta name="description" content="Modelo de site para advocacia, consultoria jurídica e atendimento profissional com visual sóbrio e direto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = { theme:{ extend:{ fontFamily:{ sans:['Inter','sans-serif'], display:['Cormorant Garamond','serif'] }, colors:{ law:{bg:'#0B1220', panel:'#111827', gold:'#C9A86A', line:'#243041', soft:'#E8EEF8'} } } } }
+  </script>
+</head>
+<body class="bg-law-bg text-white antialiased selection:bg-law-gold selection:text-black">
+  <header class="relative overflow-hidden border-b border-white/10">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,168,106,0.15),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.08),transparent_25%)]"></div>
+    <nav class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+      <div>
+        <p class="font-display text-4xl text-law-gold">Advocacia Prime</p>
+        <p class="text-xs uppercase tracking-[0.32em] text-white/45 font-bold">Modelo institucional</p>
+      </div>
+      <a href="https://wa.me/5531980159559?text=Oi%2C%20quero%20falar%20sobre%20um%20caso." target="_blank" class="border border-law-gold/40 text-law-gold px-6 py-3 rounded-full font-black hover:bg-law-gold hover:text-black transition">Falar no WhatsApp</a>
+    </nav>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+      <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.34em] font-black text-law-gold mb-5">Sobriedade e confiança</p>
+          <h1 class="font-display text-5xl md:text-7xl leading-[0.95] mb-6">Um modelo para advogado que precisa passar firmeza logo na primeira visita.</h1>
+          <p class="text-lg text-white/70 max-w-2xl mb-10">Sem exagero visual. Aqui a proposta é autoridade, clareza das áreas de atuação e um caminho simples para o primeiro contato.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#areas" class="bg-law-gold text-black px-8 py-4 rounded-2xl font-black text-center">Ver áreas de atuação</a>
+            <a href="#atendimento" class="border border-white/15 px-8 py-4 rounded-2xl font-black text-center hover:bg-white hover:text-black transition">Como funciona o atendimento</a>
+          </div>
+        </div>
+        <div class="rounded-[2.5rem] border border-law-gold/20 bg-law-panel p-5 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80" alt="Mesa de trabalho em escritório jurídico" class="rounded-[2rem] w-full h-[520px] object-cover opacity-90">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-20 bg-law-panel/70 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6">
+      <div class="rounded-[2rem] border border-white/10 p-7 bg-black/15"><div class="text-3xl font-black text-law-gold mb-2">Presença</div><p class="text-white/65">Visual mais sério e profissional para fortalecer a imagem do escritório.</p></div>
+      <div class="rounded-[2rem] border border-white/10 p-7 bg-black/15"><div class="text-3xl font-black text-law-gold mb-2">Clareza</div><p class="text-white/65">Áreas de atuação e atendimento organizados sem poluição visual.</p></div>
+      <div class="rounded-[2rem] border border-white/10 p-7 bg-black/15"><div class="text-3xl font-black text-law-gold mb-2">Contato</div><p class="text-white/65">Botão direto para triagem inicial e conversa pelo WhatsApp.</p></div>
+    </div>
+  </section>
+
+  <section id="areas" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <p class="text-sm uppercase tracking-[0.3em] font-black text-law-gold mb-4">Áreas de atuação</p>
+        <h2 class="font-display text-4xl md:text-5xl mb-4">Um jeito elegante de apresentar especialidades.</h2>
+        <p class="text-white/65 text-lg">Esses blocos ajudam muito em site de advogado porque deixam o visitante entender rápido com o que o profissional trabalha.</p>
+      </div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div class="rounded-[2rem] border border-white/10 p-7 bg-law-panel"><div class="w-14 h-14 rounded-2xl bg-law-gold/10 text-law-gold flex items-center justify-center mb-4"><i class="ph-fill ph-briefcase text-2xl"></i></div><h3 class="text-2xl font-black mb-2">Empresarial</h3><p class="text-white/65">Contratos, consultoria, cobrança e rotina jurídica para empresas.</p></div>
+        <div class="rounded-[2rem] border border-white/10 p-7 bg-law-panel"><div class="w-14 h-14 rounded-2xl bg-law-gold/10 text-law-gold flex items-center justify-center mb-4"><i class="ph-fill ph-house-line text-2xl"></i></div><h3 class="text-2xl font-black mb-2">Imobiliário</h3><p class="text-white/65">Locação, compra e venda, regularização e análise contratual.</p></div>
+        <div class="rounded-[2rem] border border-white/10 p-7 bg-law-panel"><div class="w-14 h-14 rounded-2xl bg-law-gold/10 text-law-gold flex items-center justify-center mb-4"><i class="ph-fill ph-users text-2xl"></i></div><h3 class="text-2xl font-black mb-2">Família</h3><p class="text-white/65">Separação, guarda, pensão e orientações mais sensíveis com clareza.</p></div>
+        <div class="rounded-[2rem] border border-white/10 p-7 bg-law-panel"><div class="w-14 h-14 rounded-2xl bg-law-gold/10 text-law-gold flex items-center justify-center mb-4"><i class="ph-fill ph-scales text-2xl"></i></div><h3 class="text-2xl font-black mb-2">Cível</h3><p class="text-white/65">Ações, defesa, pareceres e atendimento consultivo ou contencioso.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="atendimento" class="py-24 bg-white text-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+      <div>
+        <p class="text-sm uppercase tracking-[0.3em] font-black text-[#8C6A2E] mb-4">Atendimento</p>
+        <h2 class="font-display text-4xl md:text-5xl text-[#0B1220] mb-5">Um fluxo simples para o primeiro contato.</h2>
+        <p class="text-slate-600 text-lg">Esse tipo de seção ajuda muito no nicho jurídico, porque organiza a expectativa do cliente e transmite mais profissionalismo.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="rounded-[2rem] border border-slate-200 p-6"><div class="text-[11px] uppercase tracking-[0.28em] font-black text-[#8C6A2E] mb-3">01</div><h3 class="text-xl font-black mb-2">Contato inicial</h3><p class="text-slate-600">A pessoa chama no WhatsApp e informa o assunto principal.</p></div>
+        <div class="rounded-[2rem] border border-slate-200 p-6"><div class="text-[11px] uppercase tracking-[0.28em] font-black text-[#8C6A2E] mb-3">02</div><h3 class="text-xl font-black mb-2">Triagem</h3><p class="text-slate-600">O escritório entende o caso e organiza a próxima etapa.</p></div>
+        <div class="rounded-[2rem] border border-slate-200 p-6"><div class="text-[11px] uppercase tracking-[0.28em] font-black text-[#8C6A2E] mb-3">03</div><h3 class="text-xl font-black mb-2">Atendimento</h3><p class="text-slate-600">Consulta ou reunião já com uma estrutura mais séria e objetiva.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm uppercase tracking-[0.3em] font-black text-law-gold mb-4">Final</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-5">Para quem quer um site mais sóbrio e com autoridade.</h2>
+      <p class="text-lg text-white/65 mb-8">Esse modelo combina bem com advogado, consultoria, contabilidade e serviços mais institucionais.</p>
+      <a href="https://wa.me/5531980159559?text=Oi%2C%20quero%20um%20site%20parecido%20com%20o%20modelo%20de%20advocacia." target="_blank" class="inline-flex items-center gap-2 bg-law-gold text-black px-8 py-4 rounded-2xl font-black"><i class="ph-fill ph-whatsapp-logo text-xl"></i> Quero esse estilo</a>
+    </div>
+  </section>
+</body>
+</html>

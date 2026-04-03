@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinador PRO | Consultoria Esportiva</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        fit: {
+                            neon: '#ccff00',      /* Verde Neon (muito usado no fitness) */
+                            neonHover: '#b3e600',
+                            dark: '#0a0a0a',      /* Fundo ultra escuro */
+                            card: '#141414',      /* Cards escuros */
+                            gray: '#262626',      /* Bordas e detalhes */
+                            textMuted: '#a3a3a3'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0a0a0a; color: #f5f5f5; }
+        .glass-nav { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #262626; }
+        
+        /* Scrollbar Fitness */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #ccff00; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b3e600; }
+        
+        .clip-slant { clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    </style>
+</head>
+<body class="antialiased selection:bg-fit-neon selection:text-black">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <i class="ph-fill ph-barbell text-fit-neon text-3xl"></i>
+                    <span class="font-display font-bold text-2xl tracking-wider text-white uppercase italic">
+                        Coach<span class="text-fit-neon">Nome</span>
+                    </span>
+                </div>
+                <div class="hidden md:flex gap-8 text-sm font-semibold text-fit-textMuted uppercase tracking-widest">
+                    <a href="#sobre" class="hover:text-fit-neon transition">Método</a>
+                    <a href="#planos" class="hover:text-fit-neon transition">Planos</a>
+                    <a href="#imc" class="hover:text-fit-neon transition">Calculadora IMC</a>
+                </div>
+                <a href="#planos" class="bg-fit-neon text-black px-6 py-2 text-sm font-bold uppercase tracking-widest hover:bg-white transition skew-x-[-10deg]">
+                    <div class="skew-x-[10deg]">Começar Agora</div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden clip-slant pb-20">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=80" alt="Treino Funcional" class="w-full h-full object-cover opacity-40 grayscale mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-r from-fit-dark via-fit-dark/90 to-transparent"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 bg-fit-neon/10 border border-fit-neon/30 text-fit-neon px-3 py-1 text-xs font-bold uppercase tracking-widest mb-6">
+                    <span class="w-2 h-2 rounded-full bg-fit-neon animate-pulse"></span> Vagas Abertas para Consultoria
+                </div>
+                <h1 class="text-5xl md:text-8xl font-display font-bold mb-6 text-white uppercase leading-none italic">
+                    Construa a sua <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-fit-neon to-green-400">Melhor Versão.</span>
+                </h1>
+                <p class="text-lg text-fit-textMuted mb-10 font-light max-w-lg">
+                    Esqueça treinos genéricos. Tenha um planeamento de treino e dieta 100% focado no seu objetivo, seja hipertrofia ou emagrecimento.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#planos" class="text-center bg-fit-neon text-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-white transition skew-x-[-10deg]">
+                        <div class="skew-x-[10deg]">Ver Planos de Treino</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="imc" class="py-20 bg-fit-dark relative -mt-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-fit-card border border-fit-gray p-8 md:p-12 rounded-2xl shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-fit-neon/5 rounded-full blur-3xl"></div>
+                
+                <div class="text-center mb-10 relative z-10">
+                    <h2 class="text-fit-neon text-sm font-bold tracking-widest uppercase mb-2">Descubra o seu estado atual</h2>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold text-white uppercase italic">Calculadora de IMC</h3>
+                    <p class="text-fit-textMuted mt-2 text-sm">Calcule o seu Índice de Massa Corporal e receba uma recomendação de treino direto no WhatsApp.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 items-center relative z-10">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-fit-textMuted mb-2">Peso (kg)</label>
+                            <input type="number" id="imc-peso" placeholder="Ex: 75.5" class="w-full bg-fit-dark border border-fit-gray text-white p-4 font-display text-xl focus:border-fit-neon outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-fit-textMuted mb-2">Altura (m)</label>
+                            <input type="number" id="imc-altura" placeholder="Ex: 1.75" class="w-full bg-fit-dark border border-fit-gray text-white p-4 font-display text-xl focus:border-fit-neon outline-none transition">
+                        </div>
+                        <button onclick="calcularIMC()" class="w-full bg-white text-black py-4 font-bold uppercase tracking-widest hover:bg-fit-neon transition skew-x-[-10deg]">
+                            <div class="skew-x-[10deg] flex items-center justify-center gap-2">
+                                <i class="ph-bold ph-calculator text-xl"></i> Calcular IMC
+                            </div>
+                        </button>
+                    </div>
+
+                    <div id="imc-resultado" class="hidden bg-fit-dark border border-fit-neon/30 p-8 text-center h-full flex flex-col justify-center">
+                        <p class="text-sm text-fit-textMuted uppercase tracking-widest mb-2">O seu IMC é</p>
+                        <div id="imc-valor" class="text-5xl font-display font-bold text-fit-neon mb-2">00.0</div>
+                        <p id="imc-status" class="text-xl font-bold text-white mb-6">---</p>
+                        <button onclick="enviarZapIMC()" class="w-full border border-fit-neon text-fit-neon py-3 text-xs font-bold uppercase tracking-widest hover:bg-fit-neon hover:text-black transition flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-whatsapp text-lg"></i> Receber Plano Ideal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planos" class="py-24 bg-fit-dark relative border-t border-fit-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-fit-neon text-sm font-bold tracking-widest uppercase mb-2">Escolha a sua jornada</h2>
+                <h3 class="text-4xl md:text-5xl font-display font-bold text-white uppercase italic">Planos de Consultoria</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-fit-card border border-fit-gray p-8 hover:border-fit-neon/50 transition duration-300 flex flex-col">
+                    <h4 class="text-2xl font-display font-bold text-white uppercase italic mb-2">Plano Básico</h4>
+                    <p class="text-sm text-fit-textMuted mb-6 h-10">Treino montado para 30 dias na app.</p>
+                    <div class="text-4xl font-display font-bold text-fit-neon mb-8">R$ 97<span class="text-sm text-fit-textMuted font-sans font-normal">/mês</span></div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> Ficha de treino no telemóvel</li>
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> Vídeos demonstrativos</li>
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> Suporte por email</li>
+                    </ul>
+                    
+                    <button onclick="assinarPlano('Básico', '97')" class="w-full border border-gray-600 text-white py-4 font-bold uppercase tracking-widest text-xs hover:border-fit-neon hover:text-fit-neon transition skew-x-[-10deg]">
+                        <div class="skew-x-[10deg]">Selecionar Plano</div>
+                    </button>
+                </div>
+
+                <div class="bg-fit-card border border-fit-neon p-8 transform md:-translate-y-4 shadow-[0_0_30px_rgba(204,255,0,0.1)] flex flex-col relative">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-fit-neon text-black text-[10px] font-bold uppercase tracking-widest px-4 py-1">Mais Vendido</div>
+                    <h4 class="text-2xl font-display font-bold text-white uppercase italic mb-2">Premium (Treino + Dieta)</h4>
+                    <p class="text-sm text-fit-textMuted mb-6 h-10">O pacote completo para transformação real.</p>
+                    <div class="text-4xl font-display font-bold text-fit-neon mb-8">R$ 197<span class="text-sm text-fit-textMuted font-sans font-normal">/mês</span></div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> Ficha de treino personalizada</li>
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> Plano alimentar calculado</li>
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> Avaliação quinzenal</li>
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> WhatsApp direto com o Coach</li>
+                    </ul>
+                    
+                    <button onclick="assinarPlano('Premium', '197')" class="w-full bg-fit-neon text-black py-4 font-bold uppercase tracking-widest text-xs hover:bg-white transition skew-x-[-10deg]">
+                        <div class="skew-x-[10deg]">Selecionar Premium</div>
+                    </button>
+                </div>
+
+                <div class="bg-fit-card border border-fit-gray p-8 hover:border-fit-neon/50 transition duration-300 flex flex-col">
+                    <h4 class="text-2xl font-display font-bold text-white uppercase italic mb-2">Presencial VIP</h4>
+                    <p class="text-sm text-fit-textMuted mb-6 h-10">Treino lado a lado (Apenas BH).</p>
+                    <div class="text-4xl font-display font-bold text-fit-neon mb-8">Sob Consulta</div>
+                    
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> 3 a 5 treinos presenciais por semana</li>
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> Correção biomecânica ao vivo</li>
+                        <li class="flex items-start gap-3 text-sm text-gray-300"><i class="ph-fill ph-check-circle text-fit-neon text-lg shrink-0 mt-0.5"></i> Tudo do plano Premium incluído</li>
+                    </ul>
+                    
+                    <button onclick="assinarPlano('Presencial VIP', 'Consulta')" class="w-full border border-gray-600 text-white py-4 font-bold uppercase tracking-widest text-xs hover:border-fit-neon hover:text-fit-neon transition skew-x-[-10deg]">
+                        <div class="skew-x-[10deg]">Verificar Agenda</div>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#050505] py-16 border-t border-fit-gray">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
+            <i class="ph-fill ph-barbell text-fit-neon text-4xl mb-4"></i>
+            <span class="font-display font-bold text-2xl tracking-wider text-white uppercase italic mb-6">
+                Coach<span class="text-fit-neon">Nome</span>
+            </span>
+            <p class="text-xs text-fit-textMuted tracking-widest uppercase mb-2">Transformando corpos e mentes.</p>
+            <p class="text-[10px] text-gray-600 tracking-widest uppercase mt-8">
+                Site desenvolvido por <span class="text-fit-neon font-bold">Mayan Soluções Tech</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Efeito Navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('shadow-lg', 'shadow-black/50');
+            else navbar.classList.remove('shadow-lg', 'shadow-black/50');
+        });
+
+        // Variáveis globais para guardar o resultado do IMC
+        let imcFinal = 0;
+        let imcClassificacao = '';
+
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById('imc-peso').value);
+            const altura = parseFloat(document.getElementById('imc-altura').value);
+
+            if (!peso || !altura || peso <= 0 || altura <= 0) {
+                alert("Por favor, insira valores válidos para peso e altura.");
+                return;
+            }
+
+            imcFinal = (peso / (altura * altura)).toFixed(1);
+            
+            if (imcFinal < 18.5) {
+                imcClassificacao = 'Abaixo do Peso (Foco em Ganho de Massa)';
+            } else if (imcFinal >= 18.5 && imcFinal < 24.9) {
+                imcClassificacao = 'Peso Normal (Foco em Definição)';
+            } else if (imcFinal >= 25 && imcFinal < 29.9) {
+                imcClassificacao = 'Sobrepeso (Foco em Emagrecimento)';
+            } else {
+                imcClassificacao = 'Obesidade (Foco em Emagrecimento e Saúde)';
+            }
+
+            document.getElementById('imc-valor').innerText = imcFinal;
+            document.getElementById('imc-status').innerText = imcClassificacao.split(' (')[0];
+            
+            document.getElementById('imc-resultado').classList.remove('hidden');
+        }
+
+        function enviarZapIMC() {
+            const numeroWhatsapp = "5531980159559"; // Substitua pelo número real do cliente
+            const mensagem = `🏋️ *RESULTADO DO TESTE (Site)* 🏋️\n\nFiz o teste de IMC no seu site:\n*Meu IMC:* ${imcFinal}\n*Status:* ${imcClassificacao}\n\nGostaria de saber qual o melhor plano de consultoria para o meu caso!`;
+            
+            const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+
+        function assinarPlano(nomePlano, valor) {
+            const numeroWhatsapp = "5531980159559"; // Substitua pelo número real do cliente
+            let mensagem = `💪 *NOVO ALUNO - CONSULTORIA* 💪\n\nOlá, Coach! Tenho interesse em começar o *Plano ${nomePlano}* `;
+            if(valor !== 'Consulta') {
+                mensagem += `(R$ ${valor}/mês).`;
+            } else {
+                mensagem += `(Gostaria de consultar os valores e horários).`;
+            }
+            mensagem += `\nComo faço para dar início?`;
+
+            const url = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

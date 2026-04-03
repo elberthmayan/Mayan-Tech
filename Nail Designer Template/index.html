@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Elegance | Especialista em Unhas & Cursos</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        luxury: {
+                            gold: '#D4AF37',       
+                            goldHover: '#b5952f',
+                            dark: '#050505',       
+                            card: '#0f0f0f',       
+                            border: '#2a2a2a',     
+                            muted: '#888888'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #050505; color: #ffffff; }
+        
+        /* Scrollbar Dourada */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; }
+        
+        .glass-nav { background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
+        
+        /* Custom Checkbox Dourado */
+        .premium-checkbox:checked + div {
+            border-color: #D4AF37;
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+        .premium-checkbox:checked + div .check-icon {
+            opacity: 1;
+        }
+
+        /* Animação do WhatsApp */
+        @keyframes fadeInMsg {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .msg-animada { animation: fadeInMsg 0.4s ease-out forwards; }
+    </style>
+</head>
+<body class="antialiased selection:bg-luxury-gold selection:text-black">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex items-center gap-3">
+                    <span class="font-serif font-bold text-2xl tracking-[0.2em] uppercase text-white">
+                        Elegance
+                    </span>
+                </div>
+                <div class="hidden md:flex gap-10 text-xs font-medium tracking-[0.3em] uppercase text-luxury-muted">
+                    <a href="#lookbook" class="hover:text-luxury-gold transition duration-300">Nossos Trabalhos</a>
+                    <a href="#configurador" class="hover:text-luxury-gold transition duration-300">Orçamento</a>
+                    <a href="#cursos" class="hover:text-luxury-gold transition duration-300">Cursos</a>
+                </div>
+                <a href="#configurador" class="border border-luxury-gold text-luxury-gold px-6 py-2.5 text-[10px] font-semibold uppercase tracking-[0.3em] hover:bg-luxury-gold hover:text-black transition duration-500">
+                    Agendar Horário
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-luxury-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <div class="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    <span class="text-luxury-gold text-[10px] tracking-[0.5em] uppercase mb-6 block">Especialista & Educadora</span>
+                    <h1 class="text-5xl md:text-7xl font-serif mb-6 leading-tight tracking-widest text-white uppercase">
+                        Unhas Perfeitas, <br>
+                        <span class="text-luxury-gold italic">Autoestima.</span>
+                    </h1>
+                    <p class="text-luxury-muted font-light max-w-md text-sm md:text-base tracking-wide leading-relaxed mb-10">
+                        Técnica e arte para entregar unhas maravilhosas e resistentes. Além dos atendimentos, formo novas profissionais através dos meus cursos especializados.
+                    </p>
+                    
+                    <div class="flex gap-6 items-center">
+                        <a href="#configurador" class="group flex items-center gap-3 text-xs font-medium tracking-[0.3em] uppercase text-white hover:text-luxury-gold transition duration-300">
+                            <span class="border-b border-luxury-gold pb-1">Fazer Orçamento</span>
+                            <i class="ph-light ph-arrow-right text-xl group-hover:translate-x-2 transition duration-300"></i>
+                        </a>
+                        <a href="#cursos" class="text-[10px] text-luxury-muted uppercase tracking-[0.2em] hover:text-white transition">Ver Cursos</a>
+                    </div>
+                </div>
+
+                <div class="order-1 md:order-2 flex justify-center md:justify-end">
+                    <div class="relative w-full max-w-sm aspect-[4/5] group mt-8 md:mt-0">
+                        <div class="absolute inset-0 border border-luxury-gold/40 translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                        
+                        <div class="relative w-full h-full overflow-hidden bg-luxury-card flex flex-col items-center justify-center p-12 border border-luxury-border">
+                            <i class="ph-light ph-user-circle text-luxury-gold/30 text-[160px] mb-4"></i>
+                            <span class="text-[11px] text-luxury-muted uppercase tracking-[0.3em] text-center">Foto do<br>Profissional</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="lookbook" class="py-32 bg-luxury-card relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-luxury-gold text-[10px] tracking-[0.4em] uppercase mb-4">Galeria</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif text-white uppercase tracking-widest">Nossos Trabalhos</h3>
+                </div>
+                <p class="text-luxury-muted text-sm font-light max-w-md tracking-wide">Confira algumas das unhas maravilhosas que já passaram por aqui, feitas sempre com os melhores produtos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+                <div class="group relative overflow-hidden h-[30rem] cursor-pointer">
+                    <img src="img/unha_1.jpg" alt="Natural" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition duration-1000">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
+                        <span class="text-luxury-gold text-[10px] tracking-[0.3em] uppercase block mb-2">Delicadeza</span>
+                        <h4 class="text-2xl font-serif text-white uppercase tracking-widest">Estilo Natural</h4>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden h-[30rem] cursor-pointer">
+                    <img src="img/unha_3.jpg" alt="Decorada" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition duration-1000">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
+                        <span class="text-luxury-gold text-[10px] tracking-[0.3em] uppercase block mb-2">Criatividade</span>
+                        <h4 class="text-2xl font-serif text-white uppercase tracking-widest">Nail Art</h4>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden h-[30rem] cursor-pointer hidden lg:block">
+                    <img src="img/unha_2.jpg" alt="Luxo" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition duration-1000">
+                    <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/90 to-transparent translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition duration-500">
+                        <span class="text-luxury-gold text-[10px] tracking-[0.3em] uppercase block mb-2">Sofisticação</span>
+                        <h4 class="text-2xl font-serif text-white uppercase tracking-widest">Brilho e Luxo</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="configurador" class="py-32 bg-luxury-dark relative border-t border-luxury-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <i class="ph-light ph-sparkle text-luxury-gold text-3xl mb-4"></i>
+                <h3 class="text-3xl md:text-5xl font-serif text-white uppercase tracking-widest mb-4">Monte suas Unhas</h3>
+                <p class="text-luxury-muted text-sm font-light tracking-wide max-w-xl mx-auto">Selecione o procedimento e os detalhes. Clique em "Chamar no WhatsApp" para enviar o seu pedido diretamente para nós.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="flex-1 space-y-12">
+                    <div>
+                        <h4 class="font-serif text-xl text-white uppercase tracking-widest border-b border-luxury-border pb-4 mb-6">
+                            <span class="text-luxury-gold mr-2 text-sm">01.</span> O Procedimento
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="relative cursor-pointer group">
+                                <input type="radio" name="base" value="120" onchange="atualizarLuxo()" class="peer sr-only">
+                                <div class="border border-luxury-border p-5 hover:border-luxury-gold/50 transition duration-300 peer-checked:border-luxury-gold peer-checked:bg-luxury-gold/5">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h5 class="font-bold text-sm tracking-widest uppercase">Fibra de Vidro</h5>
+                                        <div class="w-4 h-4 rounded-full border border-luxury-muted flex items-center justify-center peer-checked:border-luxury-gold">
+                                            <div class="w-2 h-2 rounded-full bg-luxury-gold opacity-0 transition"></div>
+                                        </div>
+                                    </div>
+                                    <span class="block mt-4 text-luxury-gold font-serif text-lg">R$ 120</span>
+                                </div>
+                            </label>
+
+                            <label class="relative cursor-pointer group">
+                                <input type="radio" name="base" value="100" onchange="atualizarLuxo()" class="peer sr-only">
+                                <div class="border border-luxury-border p-5 hover:border-luxury-gold/50 transition duration-300 peer-checked:border-luxury-gold peer-checked:bg-luxury-gold/5">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h5 class="font-bold text-sm tracking-widest uppercase">Banho de Gel</h5>
+                                        <div class="w-4 h-4 rounded-full border border-luxury-muted flex items-center justify-center peer-checked:border-luxury-gold">
+                                            <div class="w-2 h-2 rounded-full bg-luxury-gold opacity-0 transition"></div>
+                                        </div>
+                                    </div>
+                                    <span class="block mt-4 text-luxury-gold font-serif text-lg">R$ 100</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-serif text-xl text-white uppercase tracking-widest border-b border-luxury-border pb-4 mb-6">
+                            <span class="text-luxury-gold mr-2 text-sm">02.</span> Decorações (Opcional)
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="relative cursor-pointer block">
+                                <input type="checkbox" value="25" data-nome="Francesinha Reversa" onchange="atualizarLuxo()" class="premium-checkbox sr-only">
+                                <div class="border border-luxury-border p-4 transition duration-300 flex justify-between items-center">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-4 h-4 border border-luxury-muted flex items-center justify-center"><i class="ph-bold ph-check text-luxury-gold text-xs opacity-0 check-icon transition"></i></div>
+                                        <span class="text-sm tracking-widest uppercase text-gray-300">Francesinha</span>
+                                    </div>
+                                    <span class="text-luxury-gold text-xs">+R$ 25</span>
+                                </div>
+                            </label>
+
+                            <label class="relative cursor-pointer block">
+                                <input type="checkbox" value="15" data-nome="Pedrarias" onchange="atualizarLuxo()" class="premium-checkbox sr-only">
+                                <div class="border border-luxury-border p-4 transition duration-300 flex justify-between items-center">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-4 h-4 border border-luxury-muted flex items-center justify-center"><i class="ph-bold ph-check text-luxury-gold text-xs opacity-0 check-icon transition"></i></div>
+                                        <span class="text-sm tracking-widest uppercase text-gray-300">Pedraria (Par)</span>
+                                    </div>
+                                    <span class="text-luxury-gold text-xs">+R$ 15</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-96">
+                    <div class="bg-luxury-card border border-luxury-border p-8 sticky top-32">
+                        <h4 class="font-serif text-xl text-center text-white uppercase tracking-widest border-b border-luxury-border pb-6 mb-6">Resumo do Pedido</h4>
+                        
+                        <div class="space-y-4 mb-8 text-sm tracking-wider">
+                            <div class="flex justify-between text-gray-400">
+                                <span class="uppercase text-[10px]">Serviço</span>
+                                <span id="luxo-base-text" class="text-white text-right">Aguardando...</span>
+                            </div>
+                            <div class="flex justify-between text-gray-400">
+                                <span class="uppercase text-[10px]">Extras</span>
+                                <span id="luxo-extras-text" class="text-white text-right max-w-[150px]">Nenhum</span>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-luxury-border pt-6 mb-8">
+                            <div class="flex justify-between items-end">
+                                <span class="text-[10px] text-luxury-muted uppercase tracking-[0.2em]">Total</span>
+                                <span id="luxo-total" class="text-4xl font-serif text-luxury-gold">R$ 0,00</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-8">
+                            <input type="text" id="luxo-nome" placeholder="Como você se chama?" class="w-full bg-transparent border-b border-luxury-border text-white p-3 text-xs tracking-widest uppercase focus:border-luxury-gold outline-none transition placeholder-luxury-muted/50">
+                        </div>
+
+                        <button onclick="prepararReservaLuxo()" class="w-full bg-luxury-gold text-black py-4 text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white transition duration-500 flex justify-center items-center gap-2">
+                            <i class="ph-bold ph-whatsapp text-lg"></i> Chamar no WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cursos" class="py-32 bg-luxury-card relative border-t border-luxury-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-luxury-gold text-[10px] tracking-[0.4em] uppercase mb-4">Evolua na Profissão</h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-white uppercase tracking-widest">Cursos & Mentorias</h3>
+                <p class="text-luxury-muted text-sm font-light mt-4 max-w-2xl mx-auto tracking-wide">Aprenda técnicas exclusivas e torne-se uma profissional de destaque no mercado.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <div class="bg-luxury-dark border border-luxury-border flex flex-col group hover:border-luxury-gold/50 transition duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-luxury-border flex flex-col items-center justify-center bg-luxury-card p-12">
+                         <i class="ph-light ph-chalkboard-teacher text-luxury-gold/30 text-[120px] mb-4"></i>
+                         <span class="text-[10px] text-luxury-muted uppercase tracking-[0.3em] text-center">Foto do Curso Presencial</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <h4 class="text-2xl font-serif text-white mb-2 uppercase tracking-widest">Formação Inicial Fibra</h4>
+                        <p class="text-sm text-luxury-muted font-light mb-6 leading-relaxed">Do zero ao alongamento perfeito. Preparação da unha, aplicação correta, ponto de tensão e lixamento técnico avançado.</p>
+                        <div class="mt-auto pt-6 border-t border-luxury-border flex items-center justify-between">
+                            <span class="text-2xl font-serif text-luxury-gold">R$ 599</span>
+                            <button onclick="comprarCurso('Formação Inicial Fibra', 'R$ 599,00')" class="text-[10px] uppercase tracking-[0.2em] text-white border-b border-luxury-gold pb-1 hover:text-luxury-gold transition">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-luxury-dark border border-luxury-border flex flex-col group hover:border-luxury-gold/50 transition duration-500">
+                    <div class="h-64 overflow-hidden relative border-b border-luxury-border flex flex-col items-center justify-center bg-luxury-card p-12">
+                         <i class="ph-light ph-laptop text-luxury-gold/30 text-[120px] mb-4"></i>
+                         <span class="text-[10px] text-luxury-muted uppercase tracking-[0.3em] text-center">Foto da Mentoria Online</span>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <h4 class="text-2xl font-serif text-white mb-2 uppercase tracking-widest">Especialização Nail Art</h4>
+                        <p class="text-sm text-luxury-muted font-light mb-6 leading-relaxed">Para quem já atua e quer dominar Francesinha Reversa, encapsuladas de luxo e formatos como Almond e Stiletto.</p>
+                        <div class="mt-auto pt-6 border-t border-luxury-border flex items-center justify-between">
+                            <span class="text-2xl font-serif text-luxury-gold">R$ 299</span>
+                            <button onclick="comprarCurso('Especialização Nail Art', 'R$ 299,00')" class="text-[10px] uppercase tracking-[0.2em] text-white border-b border-luxury-gold pb-1 hover:text-luxury-gold transition">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-luxury-card py-20 border-t border-luxury-border">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
+            <span class="font-serif font-bold text-3xl tracking-[0.2em] uppercase text-white mb-6">Elegance</span>
+            <p class="text-[10px] text-luxury-muted tracking-[0.4em] uppercase mb-12">Realçando a sua beleza todos os dias.</p>
+            <div class="w-full max-w-md h-px bg-gradient-to-r from-transparent via-luxury-gold/30 to-transparent mb-8"></div>
+            <p class="text-[9px] text-luxury-muted tracking-[0.2em] uppercase">
+                Feito com excelência por <a href="https://wa.me/5531980159559" target="_blank" class="text-luxury-gold hover:text-white transition">Mayan Soluções Tech</a>
+            </p>
+        </div>
+    </footer>
+
+    <div id="whatsapp-simulator" class="fixed inset-0 z-[100] hidden items-center justify-center transition-opacity duration-300 opacity-0 bg-black/60 backdrop-blur-sm md:p-6 font-sans">
+        
+        <div class="hidden md:block absolute top-0 left-0 w-full h-32 bg-[#00a884] z-0"></div>
+        
+        <div class="bg-[#efeae2] w-full h-full md:h-[90vh] md:max-w-[1200px] md:rounded-lg overflow-hidden shadow-2xl flex relative z-10 transform scale-95 transition-transform duration-300" id="whatsapp-box">
+            
+            <div class="hidden md:flex flex-col w-[35%] min-w-[350px] bg-white border-r border-gray-300 z-20">
+                <div class="bg-[#f0f2f5] px-4 py-3 flex items-center justify-between shrink-0 h-16 border-b border-gray-200">
+                    <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden"><i class="ph-fill ph-user text-2xl text-gray-400"></i></div>
+                    <div class="flex gap-5 text-gray-500">
+                        <i class="ph-bold ph-users text-xl"></i>
+                        <i class="ph-bold ph-circle-notch text-xl"></i>
+                        <i class="ph-bold ph-chat-teardrop-text text-xl"></i>
+                        <i class="ph-bold ph-dots-three-vertical text-xl"></i>
+                    </div>
+                </div>
+                <div class="p-2 border-b border-gray-200 bg-white">
+                    <div class="bg-[#f0f2f5] rounded-lg px-4 py-1.5 flex items-center gap-4 text-sm text-gray-500">
+                        <i class="ph-bold ph-magnifying-glass text-lg"></i>
+                        <input type="text" placeholder="Pesquisar ou começar uma nova conversa" class="bg-transparent outline-none w-full text-xs">
+                    </div>
+                </div>
+                <div class="flex-1 overflow-y-auto bg-white">
+                    <div class="flex items-center gap-3 px-4 py-3 bg-[#f0f2f5] cursor-pointer">
+                        <div class="w-12 h-12 bg-black text-luxury-gold font-serif font-bold rounded-full flex items-center justify-center border border-gray-200 shrink-0 text-xl shadow-inner">E</div>
+                        <div class="flex-1 border-b border-gray-100 pb-3 -mb-3">
+                            <div class="flex justify-between items-center mb-1">
+                                <h4 class="text-black font-normal text-base">Studio Elegance</h4>
+                                <span class="text-xs text-[#00a884]">Agora</span>
+                            </div>
+                            <p class="text-sm text-gray-500 truncate"><i class="ph-fill ph-checks text-[#53bdeb]"></i> Mensagem enviada...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col w-full md:flex-1 h-full relative z-20">
+                <div class="bg-[#00a884] md:bg-[#f0f2f5] px-4 py-3 flex items-center gap-3 shrink-0 shadow-md md:shadow-none border-b md:border-gray-200 h-16">
+                    <button onclick="fecharWhatsAppSimulado()" class="md:hidden text-white hover:bg-white/20 p-2 -ml-2 rounded-full"><i class="ph-bold ph-arrow-left text-xl"></i></button>
+                    
+                    <div class="w-10 h-10 bg-black text-luxury-gold font-serif font-bold rounded-full flex items-center justify-center shrink-0 border border-white/20 md:border-gray-300 shadow-inner">E</div>
+                    
+                    <div class="flex-1">
+                        <h4 class="text-white md:text-black font-semibold md:font-normal text-base">Studio Elegance</h4>
+                        <p class="text-white/80 md:text-gray-500 text-xs">online</p>
+                    </div>
+                    
+                    <div class="flex gap-5 text-white md:text-gray-500">
+                        <i class="ph-bold ph-dots-three-vertical text-xl"></i>
+                        <button onclick="fecharWhatsAppSimulado()" class="hidden md:block text-gray-500 hover:text-red-500 transition ml-2"><i class="ph-bold ph-x text-xl"></i></button>
+                    </div>
+                </div>
+                
+                <div class="flex-1 overflow-y-auto p-4 md:px-16 md:py-8 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat relative" style="background-size: 400px; opacity: 0.9;">
+                    
+                    <div class="flex justify-center mb-6">
+                        <div class="bg-[#ffeecd] text-gray-600 text-[11px] md:text-xs px-4 py-1.5 rounded-lg text-center max-w-sm border border-orange-100 shadow-sm"><i class="ph-fill ph-lock-key inline-block align-middle mr-1"></i> As mensagens são protegidas com criptografia.</div>
+                    </div>
+                    
+                    <div class="flex justify-end mb-4 msg-animada">
+                        <div class="bg-[#d9fdd3] text-[#111b21] px-3 md:px-4 py-2 rounded-lg rounded-tr-none max-w-[90%] md:max-w-[70%] shadow-sm text-sm md:text-[15px] relative pb-6 leading-relaxed" id="whatsapp-message-content">
+                            </div>
+                    </div>
+                </div>
+
+                <div class="bg-[#f0f2f5] px-4 py-3 flex items-center gap-3 shrink-0 min-h-[62px]">
+                    <div class="bg-white flex-1 rounded-full md:rounded-lg px-4 py-2 text-gray-400 text-sm flex items-center gap-2 border border-transparent md:border-gray-200">
+                        Mensagem
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function atualizarLuxo() {
+            const baseSelecionada = document.querySelector('input[name="base"]:checked');
+            const extrasSelecionados = document.querySelectorAll('.premium-checkbox:checked');
+            
+            let total = 0;
+            let baseNome = "Aguardando...";
+            let extrasNomes = [];
+
+            if (baseSelecionada) {
+                total += parseFloat(baseSelecionada.value);
+                baseNome = baseSelecionada.nextElementSibling.querySelector('h5').innerText;
+            }
+
+            extrasSelecionados.forEach(box => {
+                total += parseFloat(box.value);
+                extrasNomes.push(box.getAttribute('data-nome'));
+            });
+
+            document.getElementById('luxo-base-text').innerText = baseNome;
+            document.getElementById('luxo-extras-text').innerText = extrasNomes.length > 0 ? extrasNomes.join(', ') : "Nenhum";
+            document.getElementById('luxo-total').innerText = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function prepararReservaLuxo() {
+            const nome = document.getElementById('luxo-nome').value.trim();
+            const base = document.getElementById('luxo-base-text').innerText;
+            const extras = document.getElementById('luxo-extras-text').innerText;
+            const total = document.getElementById('luxo-total').innerText;
+
+            if(!nome) { alert("Por favor, diz-nos o teu nome para podermos agendar!"); return; }
+            if(base === "Aguardando...") { alert("Por favor, escolhe o serviço principal para continuar."); return; }
+            
+            let mensagem = `✨ *NOVO AGENDAMENTO - ELEGANCE* ✨\n\n`;
+            mensagem += `Oi! Meu nome é *${nome}* e eu gostaria de marcar um horário.\n\n`;
+            mensagem += `*O que eu quero fazer:*\n`;
+            mensagem += `🖤 *Serviço:* ${base}\n`;
+            if (extras !== "Nenhum") {
+                mensagem += `✨ *Detalhes:* ${extras}\n`;
+            }
+            mensagem += `\n💎 *Total Previsto:* ${total}\n\n`;
+            mensagem += `Quais os horários livres que você tem?`;
+
+            abrirWhatsAppSimulado(mensagem);
+        }
+
+        function comprarCurso(nomeCurso, preco) {
+            let mensagem = `🎓 *NOVA MATRÍCULA - CURSO DE UNHAS*\n\n`;
+            mensagem += `Olá! Tenho muito interesse em me profissionalizar e vi o curso no site:\n`;
+            mensagem += `▶ *${nomeCurso}*\n`;
+            mensagem += `💰 Valor: ${preco}\n\n`;
+            mensagem += `Como faço para garantir a minha vaga e efetuar o pagamento?`;
+
+            abrirWhatsAppSimulado(mensagem);
+        }
+
+        function abrirWhatsAppSimulado(mensagemTexto) {
+            let htmlFormatado = mensagemTexto
+                .replace(/\n/g, '<br>')
+                .replace(/\*(.*?)\*/g, '<strong>$1</strong>');
+            
+            document.getElementById('whatsapp-message-content').innerHTML = htmlFormatado + '<span class="text-[10px] text-gray-500 absolute bottom-1 right-2 flex items-center gap-1">agora <i class="ph-fill ph-checks text-[#53bdeb] text-sm"></i></span>';
+            
+            const modal = document.getElementById('whatsapp-simulator');
+            const box = document.getElementById('whatsapp-box');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            setTimeout(() => { 
+                modal.classList.remove('opacity-0'); 
+                box.classList.remove('scale-95'); 
+                box.classList.add('scale-100'); 
+            }, 10);
+        }
+
+        function fecharWhatsAppSimulado() {
+            const modal = document.getElementById('whatsapp-simulator');
+            const box = document.getElementById('whatsapp-box');
+            
+            modal.classList.add('opacity-0');
+            box.classList.remove('scale-100');
+            box.classList.add('scale-95');
+            
+            setTimeout(() => { 
+                modal.classList.add('hidden'); 
+                modal.classList.remove('flex'); 
+            }, 300);
+        }
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('bg-luxury-dark/95', 'shadow-2xl');
+            else navbar.classList.remove('bg-luxury-dark/95', 'shadow-2xl');
+        });
+    </script>
+</body>
+</html>

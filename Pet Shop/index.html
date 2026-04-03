@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Feliz | Banho, tosa e carinho</title>
+  <meta name="description" content="Modelo de site para pet shop com banho e tosa, loja, planos e agendamento pelo WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = { theme:{ extend:{ fontFamily:{ sans:['Inter','sans-serif'], display:['Baloo 2','cursive'] }, colors:{ pet:{orange:'#F97316', yellow:'#FDBA74', cream:'#FFF7ED', brown:'#7C2D12', green:'#16A34A'} } } } }
+  </script>
+</head>
+<body class="bg-pet-cream text-slate-900 antialiased selection:bg-pet-orange selection:text-white">
+  <header class="relative overflow-hidden bg-[linear-gradient(135deg,#FFF7ED,#FFE8CC)]">
+    <div class="absolute top-0 right-0 w-80 h-80 bg-orange-200/60 blur-3xl rounded-full"></div>
+    <nav class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+      <div>
+        <p class="font-display text-4xl text-pet-brown">Pet Feliz</p>
+        <p class="text-xs uppercase tracking-[0.3em] font-bold text-pet-brown/60">Modelo para pet shop</p>
+      </div>
+      <a href="https://wa.me/5531980159559?text=Oi%2C%20quero%20agendar%20banho%20e%20tosa." target="_blank" class="bg-pet-orange text-white px-6 py-3 rounded-full font-black shadow-lg">Agendar no WhatsApp</a>
+    </nav>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.32em] font-black text-pet-orange mb-5">Banho, tosa e cuidados</p>
+          <h1 class="font-display text-5xl md:text-7xl leading-[0.95] text-pet-brown mb-6">Um site leve, carismático e feito para encher a agenda do pet shop.</h1>
+          <p class="text-lg text-slate-700 max-w-2xl mb-8">Perfeito para banho e tosa, loja pet, pacotes mensais e atendimento local. A proposta aqui é transmitir carinho, limpeza e praticidade logo de cara.</p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <a href="#servicos" class="bg-pet-brown text-white px-8 py-4 rounded-2xl font-black text-center">Ver serviços</a>
+            <a href="#planos" class="bg-white border border-orange-200 px-8 py-4 rounded-2xl font-black text-center">Ver planos</a>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="rounded-3xl bg-white p-5 border border-orange-100"><div class="text-3xl font-black text-pet-orange">Banho</div><p class="text-sm text-slate-600 font-semibold">com cheirinho e cuidado</p></div>
+            <div class="rounded-3xl bg-white p-5 border border-orange-100"><div class="text-3xl font-black text-pet-orange">Tosa</div><p class="text-sm text-slate-600 font-semibold">higiênica ou na tesoura</p></div>
+            <div class="rounded-3xl bg-white p-5 border border-orange-100"><div class="text-3xl font-black text-pet-orange">Loja</div><p class="text-sm text-slate-600 font-semibold">ração, petiscos e acessórios</p></div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -bottom-5 -left-5 bg-white rounded-[2rem] p-5 shadow-2xl border border-orange-100 hidden md:block">
+            <p class="text-xs uppercase tracking-[0.28em] text-pet-orange font-black mb-1">Destaque</p>
+            <p class="text-lg font-black text-pet-brown">Banho + tosa + hidratação</p>
+            <p class="text-slate-600">ótimo para vender pacote e recorrência</p>
+          </div>
+          <div class="rounded-[2.5rem] bg-white p-4 shadow-2xl border border-orange-100">
+            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80" alt="Cachorro sendo cuidado em pet shop" class="rounded-[2rem] w-full h-[520px] object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="servicos" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <p class="text-sm uppercase tracking-[0.3em] font-black text-pet-orange mb-4">Serviços</p>
+        <h2 class="font-display text-4xl md:text-5xl text-pet-brown mb-4">Tudo organizado para o tutor bater o olho e já chamar.</h2>
+        <p class="text-slate-600 text-lg">Cada card pode virar um botão de WhatsApp, facilitando banho, tosa, táxi dog e outros serviços do cliente.</p>
+      </div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div class="rounded-[2rem] bg-white border border-orange-100 p-7"><div class="w-14 h-14 rounded-2xl bg-orange-100 text-pet-orange flex items-center justify-center mb-4"><i class="ph-fill ph-drop text-2xl"></i></div><h3 class="text-xl font-black text-pet-brown mb-2">Banho Completo</h3><p class="text-slate-600 mb-5">Lavagem, secagem, perfume e escovação.</p><div class="text-2xl font-black text-pet-orange">a partir de R$ 45</div></div>
+        <div class="rounded-[2rem] bg-white border border-orange-100 p-7"><div class="w-14 h-14 rounded-2xl bg-orange-100 text-pet-orange flex items-center justify-center mb-4"><i class="ph-fill ph-scissors text-2xl"></i></div><h3 class="text-xl font-black text-pet-brown mb-2">Tosa Higiênica</h3><p class="text-slate-600 mb-5">Mais conforto e cuidado no dia a dia.</p><div class="text-2xl font-black text-pet-orange">a partir de R$ 35</div></div>
+        <div class="rounded-[2rem] bg-white border border-orange-100 p-7"><div class="w-14 h-14 rounded-2xl bg-orange-100 text-pet-orange flex items-center justify-center mb-4"><i class="ph-fill ph-car text-2xl"></i></div><h3 class="text-xl font-black text-pet-brown mb-2">Leva e Traz</h3><p class="text-slate-600 mb-5">Ideal para bairros próximos e rotina corrida.</p><div class="text-2xl font-black text-pet-orange">sob consulta</div></div>
+        <div class="rounded-[2rem] bg-white border border-orange-100 p-7"><div class="w-14 h-14 rounded-2xl bg-orange-100 text-pet-orange flex items-center justify-center mb-4"><i class="ph-fill ph-bowl-food text-2xl"></i></div><h3 class="text-xl font-black text-pet-brown mb-2">Loja Pet</h3><p class="text-slate-600 mb-5">Rações, petiscos e itens para o dia a dia.</p><div class="text-2xl font-black text-pet-orange">pronta para catálogo</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos" class="py-24 bg-white border-y border-orange-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-12 items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.3em] font-black text-pet-orange mb-4">Pacotes</p>
+          <h2 class="font-display text-4xl md:text-5xl text-pet-brown mb-5">Ótimo nicho para vender recorrência mensal.</h2>
+          <p class="text-slate-600 text-lg">Pet shop combina muito com planos fixos. Esse tipo de bloco ajuda o cliente a enxergar mensalidade, fidelização e retorno.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="rounded-[2rem] border border-orange-100 p-6"><h3 class="text-xl font-black text-pet-brown mb-2">Plano Banho</h3><p class="text-slate-600 mb-6">4 banhos por mês</p><div class="text-4xl font-black text-pet-orange mb-2">R$ 160</div><p class="text-sm text-slate-500">bom para pets de pequeno porte</p></div>
+          <div class="rounded-[2rem] border-2 border-pet-orange p-6 bg-orange-50"><div class="text-[10px] uppercase tracking-[0.28em] text-pet-orange font-black mb-3">Mais pedido</div><h3 class="text-xl font-black text-pet-brown mb-2">Plano Banho + Tosa</h3><p class="text-slate-600 mb-6">banhos + 2 tosas no mês</p><div class="text-4xl font-black text-pet-orange mb-2">R$ 240</div><p class="text-sm text-slate-500">forte para fidelização</p></div>
+          <div class="rounded-[2rem] border border-orange-100 p-6"><h3 class="text-xl font-black text-pet-brown mb-2">Plano VIP</h3><p class="text-slate-600 mb-6">banho, tosa, hidratação e mimo</p><div class="text-4xl font-black text-pet-orange mb-2">R$ 320</div><p class="text-sm text-slate-500">para público que valoriza cuidado premium</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm uppercase tracking-[0.3em] font-black text-pet-orange mb-4">Chamada final</p>
+      <h2 class="font-display text-4xl md:text-5xl text-pet-brown mb-5">Site com cara de carinho, limpeza e atendimento real.</h2>
+      <p class="text-lg text-slate-600 mb-8">Esse modelo foi pensado para vender confiança para o tutor e praticidade para o negócio.</p>
+      <a href="https://wa.me/5531980159559?text=Oi%2C%20quero%20um%20site%20parecido%20com%20o%20modelo%20de%20pet%20shop." target="_blank" class="inline-flex items-center gap-2 bg-pet-brown text-white px-8 py-4 rounded-2xl font-black"><i class="ph-fill ph-whatsapp-logo text-xl"></i> Quero esse estilo</a>
+    </div>
+  </section>
+</body>
+</html>

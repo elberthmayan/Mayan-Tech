@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odonto Care | Sorriso com confiança</title>
+  <meta name="description" content="Modelo de site para clínica odontológica com serviços, prova de confiança e botão de agendamento no WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans:['Manrope','sans-serif'], display:['DM Serif Display','serif'] }, colors:{ dental:{blue:'#0EA5E9', dark:'#082F49', soft:'#F0F9FF', border:'#BAE6FD'} } } } }
+  </script>
+</head>
+<body class="bg-dental-soft text-slate-900 antialiased selection:bg-dental-blue selection:text-white">
+  <header class="relative overflow-hidden bg-white border-b border-dental-border">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-sky-100 rounded-full blur-3xl"></div>
+    <nav class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+      <div>
+        <p class="font-display text-3xl text-dental-dark">Odonto Care</p>
+        <p class="text-xs uppercase tracking-[0.3em] text-slate-500 font-bold">Modelo para clínica</p>
+      </div>
+      <a href="https://wa.me/5531980159559" target="_blank" class="bg-dental-blue text-white px-6 py-3 rounded-full font-bold">Agendar avaliação</a>
+    </nav>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-dental-blue text-sm uppercase tracking-[0.3em] font-black mb-4">Confiança e cuidado</p>
+          <h1 class="font-display text-5xl md:text-7xl text-dental-dark leading-tight mb-6">Um modelo de site que passa segurança logo na primeira visita.</h1>
+          <p class="text-lg text-slate-600 max-w-2xl mb-10">Ideal para clínicas, dentistas e atendimento local. Foco em credibilidade, clareza dos serviços e contato rápido no WhatsApp.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#servicos" class="bg-dental-blue text-white px-8 py-4 rounded-2xl font-bold text-center">Ver serviços</a>
+            <a href="#contato" class="border border-slate-200 px-8 py-4 rounded-2xl font-bold text-center">Ver contato</a>
+          </div>
+        </div>
+        <div class="rounded-[2.5rem] bg-dental-dark p-5 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80" alt="Profissional sorrindo em clínica odontológica" class="rounded-[2rem] w-full h-[520px] object-cover">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6">
+      <div class="rounded-3xl bg-white border border-dental-border p-7"><div class="w-14 h-14 rounded-2xl bg-sky-100 text-dental-blue flex items-center justify-center mb-4"><i class="ph-bold ph-shield-check text-2xl"></i></div><h3 class="text-xl font-black mb-2">Imagem de confiança</h3><p class="text-slate-600">Site claro, limpo e com visual profissional para clínica local.</p></div>
+      <div class="rounded-3xl bg-white border border-dental-border p-7"><div class="w-14 h-14 rounded-2xl bg-sky-100 text-dental-blue flex items-center justify-center mb-4"><i class="ph-bold ph-tooth text-2xl"></i></div><h3 class="text-xl font-black mb-2">Serviços destacados</h3><p class="text-slate-600">Ótimo para limpeza, clareamento, implantes e ortodontia.</p></div>
+      <div class="rounded-3xl bg-white border border-dental-border p-7"><div class="w-14 h-14 rounded-2xl bg-sky-100 text-dental-blue flex items-center justify-center mb-4"><i class="ph-bold ph-whatsapp-logo text-2xl"></i></div><h3 class="text-xl font-black mb-2">Agendamento direto</h3><p class="text-slate-600">Botão claro para avaliação, orçamento ou primeira consulta.</p></div>
+    </div>
+  </section>
+
+  <section id="servicos" class="py-24 bg-white border-y border-dental-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <p class="text-dental-blue text-sm uppercase tracking-[0.3em] font-black mb-4">Serviços</p>
+        <h2 class="font-display text-4xl md:text-5xl text-dental-dark mb-4">Dá para apresentar os principais tratamentos com clareza.</h2>
+        <p class="text-slate-600">Aqui você troca pelos serviços do cliente e reforça o profissionalismo da clínica.</p>
+      </div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div class="rounded-[2rem] bg-dental-soft border border-dental-border p-6"><h3 class="text-xl font-black mb-2">Limpeza Dental</h3><p class="text-slate-600">Prevenção e manutenção da saúde bucal.</p></div>
+        <div class="rounded-[2rem] bg-dental-soft border border-dental-border p-6"><h3 class="text-xl font-black mb-2">Clareamento</h3><p class="text-slate-600">Melhora a estética e valoriza o sorriso.</p></div>
+        <div class="rounded-[2rem] bg-dental-soft border border-dental-border p-6"><h3 class="text-xl font-black mb-2">Ortodontia</h3><p class="text-slate-600">Acompanhamento e correção com segurança.</p></div>
+        <div class="rounded-[2rem] bg-dental-soft border border-dental-border p-6"><h3 class="text-xl font-black mb-2">Implantes</h3><p class="text-slate-600">Tratamentos que pedem credibilidade e boa apresentação.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-[2.5rem] bg-dental-dark text-white p-10 md:p-14 text-center">
+        <p class="text-sky-300 text-sm uppercase tracking-[0.3em] font-black mb-4">Contato rápido</p>
+        <h2 class="font-display text-4xl md:text-5xl mb-5">Esse modelo ajuda a clínica a parecer mais séria e organizada.</h2>
+        <p class="text-white/70 text-lg max-w-3xl mx-auto mb-10">Muito bom para usar no Google Business, Instagram e campanhas locais. O paciente vê os serviços e já entra em contato.</p>
+        <a href="https://wa.me/5531980159559?text=Oi%2C%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" class="inline-flex items-center gap-2 bg-dental-blue text-white px-8 py-4 rounded-2xl font-black"><i class="ph-bold ph-whatsapp-logo text-xl"></i> Agendar avaliação</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

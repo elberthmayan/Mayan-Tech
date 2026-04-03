@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de WhatsApp | Portfólio Mayan Tech</title>
+  <meta name="description" content="Simulação de conversa no WhatsApp Web e no celular para apresentar como o fluxo do site funciona para o cliente final.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','sans-serif'] }}}}
+  </script>
+</head>
+<body class="font-sans bg-slate-950 text-white min-h-screen">
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top,rgba(16,185,129,.18),transparent_30%),radial-gradient(circle_at_right,rgba(37,99,235,.14),transparent_25%),linear-gradient(180deg,#020617,#0f172a)]">
+    <div class="max-w-7xl mx-auto px-4 py-8 md:py-10">
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8">
+        <div>
+          <a href="./index.html" class="inline-flex items-center gap-2 text-white/70 hover:text-white mb-5"><i class="ph ph-arrow-left"></i> Voltar ao portfólio</a>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-[11px] uppercase tracking-[0.3em] font-extrabold"><i class="ph-fill ph-whatsapp-logo"></i> fluxo simulado</span>
+          <h1 class="text-4xl md:text-5xl font-black mt-5 max-w-3xl leading-tight">Veja como o cliente sairia do site e cairia direto no WhatsApp.</h1>
+          <p class="text-white/70 text-lg max-w-3xl mt-4">A ideia aqui é deixar mais fácil para quem estiver vendo o portfólio entender o caminho real: clicar em agendar, pedir, reservar ou tirar dúvidas e já abrir uma conversa pronta.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <button id="btn-mobile" class="px-5 py-3 rounded-2xl bg-white text-slate-900 font-black inline-flex items-center gap-2"><i class="ph ph-device-mobile"></i> Celular</button>
+          <button id="btn-desktop" class="px-5 py-3 rounded-2xl bg-white/10 text-white font-black inline-flex items-center gap-2"><i class="ph ph-desktop"></i> WhatsApp Web</button>
+        </div>
+      </div>
+
+      <div class="grid xl:grid-cols-[340px,1fr] gap-8 items-start">
+        <aside class="rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur p-6">
+          <div class="text-sm uppercase tracking-[0.25em] text-emerald-300 font-black mb-4">Resumo da simulação</div>
+          <div class="space-y-4 text-white/80">
+            <div><div class="text-xs uppercase tracking-widest text-white/45 mb-1">Negócio</div><div id="summary-business" class="font-bold text-lg text-white">Empresa</div></div>
+            <div><div class="text-xs uppercase tracking-widest text-white/45 mb-1">Ação</div><div id="summary-action" class="font-semibold">Contato iniciado</div></div>
+            <div><div class="text-xs uppercase tracking-widest text-white/45 mb-1">Mensagem enviada</div><div id="summary-preview" class="leading-relaxed text-sm bg-black/20 rounded-2xl p-4 border border-white/10"></div></div>
+          </div>
+          <div class="mt-6 rounded-[1.5rem] bg-emerald-400/10 border border-emerald-300/20 p-5 text-sm text-emerald-100 leading-relaxed">
+            <strong class="block text-white mb-2">Por que isso ajuda a vender?</strong>
+            Em vez de só falar “tem botão de WhatsApp”, o portfólio mostra a experiência acontecendo na prática, tanto no celular quanto na visão do WhatsApp Web.
+          </div>
+        </aside>
+
+        <section class="relative">
+          <div id="mobile-view" class="max-w-sm mx-auto rounded-[2.5rem] border-[10px] border-slate-900 bg-[#efeae2] shadow-[0_30px_80px_rgba(0,0,0,.45)] overflow-hidden">
+            <div class="h-7 bg-slate-900 flex items-center justify-center"><div class="w-24 h-1.5 rounded-full bg-slate-700"></div></div>
+            <div class="bg-[#00a884] px-4 py-3 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-white/95 text-slate-900 font-black flex items-center justify-center" id="mobile-avatar">MT</div>
+              <div class="flex-1 min-w-0"><div class="font-bold truncate" id="mobile-business">Empresa</div><div class="text-xs text-white/80">online</div></div>
+              <i class="ph ph-video-camera text-xl"></i><i class="ph ph-phone text-xl"></i>
+            </div>
+            <div class="min-h-[520px] bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat p-4 flex flex-col justify-between">
+              <div class="text-center"><span class="inline-flex text-[11px] px-3 py-1 rounded-full bg-[#182229]/90 text-white/80">hoje</span></div>
+              <div class="flex justify-end mt-16">
+                <div class="bg-[#d9fdd3] text-[#111b21] rounded-2xl rounded-tr-sm px-4 py-3 shadow max-w-[85%] text-sm leading-relaxed relative" id="mobile-message"></div>
+              </div>
+            </div>
+            <div class="bg-[#f0f2f5] px-4 py-3 flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-slate-500"><i class="ph ph-plus"></i></div><div class="flex-1 bg-white rounded-full px-4 py-3 text-slate-400 text-sm">Mensagem</div><div class="w-10 h-10 rounded-full bg-[#00a884] flex items-center justify-center"><i class="ph-fill ph-microphone text-white"></i></div></div>
+          </div>
+
+          <div id="desktop-view" class="hidden rounded-[2rem] overflow-hidden border border-white/10 bg-[#111b21] shadow-[0_30px_80px_rgba(0,0,0,.45)] min-h-[720px]">
+            <div class="grid grid-cols-[360px,1fr] min-h-[720px]">
+              <div class="border-r border-white/10 bg-[#111b21]">
+                <div class="bg-[#202c33] px-5 py-4 flex items-center justify-between"><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-white text-slate-900 font-black flex items-center justify-center">ME</div><div><div class="font-bold">Você</div><div class="text-xs text-white/50">Portfólio em demonstração</div></div></div><div class="flex items-center gap-4 text-white/70"><i class="ph ph-circle-dashed"></i><i class="ph ph-chat-circle-dots"></i><i class="ph ph-dots-three-vertical"></i></div></div>
+                <div class="p-4 bg-[#111b21] border-b border-white/5"><div class="rounded-xl bg-[#202c33] px-4 py-3 text-sm text-white/45">Pesquisar ou começar uma nova conversa</div></div>
+                <div class="p-2">
+                  <div class="rounded-2xl bg-[#202c33] p-4 flex items-center gap-3 border border-white/5">
+                    <div class="w-12 h-12 rounded-full bg-white text-slate-900 font-black flex items-center justify-center" id="desktop-avatar">MT</div>
+                    <div class="min-w-0 flex-1"><div id="desktop-business" class="font-bold truncate">Empresa</div><div id="desktop-action" class="text-sm text-white/60 truncate">Novo contato iniciado pelo site</div></div>
+                    <div class="text-xs text-emerald-300 font-bold">agora</div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col bg-[#efeae2]">
+                <div class="bg-[#202c33] px-5 py-4 flex items-center gap-3 text-white"><div class="w-10 h-10 rounded-full bg-white text-slate-900 font-black flex items-center justify-center" id="desktop-avatar-top">MT</div><div class="flex-1"><div class="font-bold" id="desktop-business-top">Empresa</div><div class="text-xs text-white/60">clique vindo do site • conversa iniciada</div></div><div class="flex gap-4 text-white/70"><i class="ph ph-magnifying-glass"></i><i class="ph ph-paperclip"></i><i class="ph ph-dots-three-vertical"></i></div></div>
+                <div class="flex-1 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat p-8 flex items-end justify-end">
+                  <div class="bg-[#d9fdd3] text-[#111b21] rounded-2xl rounded-tr-sm px-4 py-3 shadow max-w-xl text-sm leading-relaxed relative" id="desktop-message"></div>
+                </div>
+                <div class="bg-[#f0f2f5] px-6 py-4 flex items-center gap-3"><div class="text-slate-500 text-xl"><i class="ph ph-smiley"></i></div><div class="flex-1 bg-white rounded-xl px-4 py-3 text-slate-400 text-sm">Digite uma mensagem</div><div class="text-slate-500 text-xl"><i class="ph ph-paper-plane-tilt"></i></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const business = params.get('business') || 'Empresa';
+    const action = params.get('action') || 'Novo contato iniciado pelo site';
+    const avatar = (params.get('avatar') || business.split(' ').map(x=>x[0]).join('').slice(0,2) || 'MT').toUpperCase();
+    const rawMessage = params.get('message') || 'Olá! Vim pelo site e quero mais informações.';
+    const messageHtml = rawMessage
+      .replace(/
+/g, '<br>')
+      .replace(/\*(.*?)\*/g, '<strong>$1</strong>');
+
+    function setText(id, text){ const el=document.getElementById(id); if(el) el.textContent=text; }
+    function setHtml(id, html){ const el=document.getElementById(id); if(el) el.innerHTML = html + '<div class="text-[11px] text-slate-500 mt-2 text-right">agora <span class="text-sky-500">✓✓</span></div>'; }
+    ['mobile-business','desktop-business','desktop-business-top','summary-business'].forEach(id=>setText(id,business));
+    ['mobile-avatar','desktop-avatar','desktop-avatar-top'].forEach(id=>setText(id,avatar));
+    setText('desktop-action', action);
+    setText('summary-action', action);
+    setHtml('mobile-message', messageHtml);
+    setHtml('desktop-message', messageHtml);
+    document.getElementById('summary-preview').innerHTML = messageHtml;
+
+    const mobileView = document.getElementById('mobile-view');
+    const desktopView = document.getElementById('desktop-view');
+    const btnMobile = document.getElementById('btn-mobile');
+    const btnDesktop = document.getElementById('btn-desktop');
+    function setMode(mode){
+      const mobile = mode !== 'desktop';
+      mobileView.classList.toggle('hidden', !mobile);
+      desktopView.classList.toggle('hidden', mobile);
+      btnMobile.className = mobile ? 'px-5 py-3 rounded-2xl bg-white text-slate-900 font-black inline-flex items-center gap-2' : 'px-5 py-3 rounded-2xl bg-white/10 text-white font-black inline-flex items-center gap-2';
+      btnDesktop.className = !mobile ? 'px-5 py-3 rounded-2xl bg-white text-slate-900 font-black inline-flex items-center gap-2' : 'px-5 py-3 rounded-2xl bg-white/10 text-white font-black inline-flex items-center gap-2';
+    }
+    btnMobile.addEventListener('click', ()=>setMode('mobile'));
+    btnDesktop.addEventListener('click', ()=>setMode('desktop'));
+    setMode(params.get('mode') || 'mobile');
+  </script>
+</body>
+</html>
