@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oficina Turbo | Especialistas Automotivos</title>
+  <title>Nome da OFICINA | Centro Automotivo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -42,22 +42,27 @@
 </head>
 <body class="bg-mec-bg text-white antialiased selection:bg-mec-brand selection:text-white pb-24 md:pb-0">
 
-  <div class="bg-mec-brand text-white font-display font-bold uppercase tracking-widest text-xs py-2 text-center">
+  <div class="bg-mec-brand text-white font-display font-bold uppercase tracking-widest text-xs py-2 text-center shadow-lg relative z-50">
     <span class="flex items-center justify-center gap-2"><i class="ph-fill ph-warning text-mec-accent"></i> Revisão Preventiva com 15% de Desconto! Agende já.</span>
   </div>
 
   <nav class="border-b border-white/10 bg-mec-bg/90 backdrop-blur-md sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <i class="ph-fill ph-engine text-4xl text-mec-brand"></i>
         <div>
-          <h1 class="font-display text-2xl font-bold leading-none tracking-wide uppercase">Oficina <span class="text-mec-brand">Turbo</span></h1>
+          <h1 class="font-display text-xl sm:text-2xl font-bold leading-none tracking-wide uppercase">Nome da <span class="text-mec-brand">OFICINA</span></h1>
           <p class="text-[10px] text-white/50 uppercase tracking-widest font-bold mt-1">Centro Automotivo</p>
         </div>
       </div>
-      <button onclick="abrirDrawer()" class="hidden md:flex bg-white hover:bg-zinc-200 text-black px-6 py-2.5 rounded-sm font-bold text-sm uppercase tracking-wider items-center gap-2 transition">
-        <i class="ph-bold ph-wrench"></i> Pedir Orçamento
-      </button>
+      <div class="hidden md:flex gap-8 items-center font-bold text-sm tracking-widest uppercase text-white/60">
+          <a href="#sobre" class="hover:text-mec-brand transition">Sobre</a>
+          <a href="#servicos" class="hover:text-mec-brand transition">Serviços</a>
+          <a href="#avaliacoes" class="hover:text-mec-brand transition">Avaliações</a>
+          <button onclick="abrirDrawer()" class="bg-white hover:bg-zinc-200 text-black px-6 py-2.5 rounded-sm font-bold text-sm uppercase tracking-wider items-center gap-2 transition flex ml-4">
+            <i class="ph-bold ph-wrench"></i> Pedir Orçamento
+          </button>
+      </div>
     </div>
   </nav>
 
@@ -65,13 +70,13 @@
     <div class="absolute inset-0 bg-gradient-to-r from-mec-bg via-mec-bg/90 to-transparent z-0"></div>
     <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1600&q=80" alt="Mecânico trabalhando" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity z-[-1]">
     
-    <div class="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
       <div class="max-w-2xl">
         <div class="inline-flex items-center gap-2 border border-mec-brand/30 bg-mec-brand/10 text-mec-brand px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-widest mb-6">
           <i class="ph-fill ph-check-circle"></i> Especialistas em Multimarcas
         </div>
         <h2 class="font-display text-5xl md:text-7xl font-bold uppercase tracking-tight leading-[1.1] mb-6">
-          Seu carro não pode <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-mec-brand to-red-400">te deixar na mão.</span>
+          Seu carro não pode <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-mec-brand to-red-500">te deixar na mão.</span>
         </h2>
         <p class="text-white/70 text-lg md:text-xl font-medium mb-8 max-w-xl border-l-4 border-mec-brand pl-4">
           Transparência, agilidade e preço justo. Diga o que seu carro tem e receba um pré-orçamento direto no WhatsApp sem enrolação.
@@ -81,83 +86,217 @@
           <button onclick="abrirDrawer()" class="bg-mec-brand hover:bg-mec-brand_hover text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3 transition shadow-[0_0_20px_rgba(220,38,38,0.3)]">
             <i class="ph-bold ph-whatsapp-logo text-xl"></i> Orçamento Rápido
           </button>
-          <a href="#servicos" class="bg-mec-card border border-white/10 hover:border-white/30 text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3 transition">
-            Ver Serviços
-          </a>
+          
+          <button onclick="demonstrarSimulador()" class="bg-mec-card border border-white/10 hover:border-white/30 text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-[11px] sm:text-sm flex items-center justify-center gap-3 transition">
+            <i class="ph-bold ph-eye text-lg text-mec-brand"></i> Ver como chega no Zap
+          </button>
         </div>
       </div>
       
-      <div class="hidden md:block glass p-6 rounded-lg border-t-4 border-t-mec-brand max-w-sm">
-        <h3 class="font-display text-xl font-bold uppercase mb-4">Por que nos escolher?</h3>
-        <ul class="space-y-4">
-          <li class="flex items-start gap-3"><i class="ph-fill ph-shield-check text-mec-brand text-xl"></i> <span class="text-sm text-white/80">Garantia de 90 dias em todos os serviços.</span></li>
-          <li class="flex items-start gap-3"><i class="ph-fill ph-clock text-mec-brand text-xl"></i> <span class="text-sm text-white/80">Entregamos no prazo combinado.</span></li>
-          <li class="flex items-start gap-3"><i class="ph-fill ph-camera text-mec-brand text-xl"></i> <span class="text-sm text-white/80">Enviamos fotos e vídeos das peças trocadas.</span></li>
+      <div class="hidden md:block bg-mec-card/80 backdrop-blur-md p-8 rounded-lg border-t-4 border-t-mec-brand max-w-sm shadow-2xl border border-white/5">
+        <h3 class="font-display text-xl font-bold uppercase mb-6 text-white">Por que nos escolher?</h3>
+        <ul class="space-y-5">
+          <li class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-mec-brand/10 flex items-center justify-center shrink-0"><i class="ph-fill ph-shield-check text-mec-brand text-xl"></i></div>
+            <span class="text-sm text-white/80 font-medium pt-1">Garantia de 90 dias em todos os serviços.</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-mec-brand/10 flex items-center justify-center shrink-0"><i class="ph-fill ph-clock text-mec-brand text-xl"></i></div>
+            <span class="text-sm text-white/80 font-medium pt-1">Entregamos no prazo combinado, sem surpresas.</span>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-mec-brand/10 flex items-center justify-center shrink-0"><i class="ph-fill ph-camera text-mec-brand text-xl"></i></div>
+            <span class="text-sm text-white/80 font-medium pt-1">Enviamos fotos e vídeos das peças trocadas.</span>
+          </li>
         </ul>
       </div>
     </div>
   </header>
 
-  <section id="servicos" class="py-20 bg-mec-bg">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="font-display text-4xl font-bold uppercase tracking-wide">O que fazemos</h2>
-        <div class="w-20 h-1 bg-mec-brand mx-auto mt-4"></div>
-      </div>
+  <div class="bg-mec-card border-b border-white/5 py-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 flex justify-center flex-wrap gap-8 md:gap-16 text-white/20 font-display font-bold uppercase tracking-widest text-lg md:text-2xl">
+      <span class="hover:text-white/50 transition cursor-default">Volkswagen</span>
+      <span class="hover:text-white/50 transition cursor-default">Chevrolet</span>
+      <span class="hover:text-white/50 transition cursor-default">Fiat</span>
+      <span class="hover:text-white/50 transition cursor-default">Ford</span>
+      <span class="hover:text-white/50 transition cursor-default">Toyota</span>
+      <span class="hover:text-white/50 transition cursor-default">Honda</span>
+    </div>
+  </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-        <div class="bg-mec-card p-6 rounded-lg border border-white/5 hover:border-mec-brand/50 transition group cursor-pointer" onclick="abrirDrawerComServico('Troca de Óleo e Filtros')">
-          <i class="ph-duotone ph-drop text-4xl text-mec-brand mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="font-display text-lg font-bold uppercase mb-2">Óleo e Filtros</h3>
-          <p class="text-white/50 text-xs md:text-sm">Lubrificantes originais para maior vida útil do motor.</p>
+  <section id="sobre" class="py-24 bg-mec-bg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative">
+          <div class="absolute inset-0 bg-mec-brand translate-x-4 translate-y-4 rounded-lg z-0"></div>
+          <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=800&q=80" alt="Oficina por dentro" class="relative z-10 w-full rounded-lg shadow-2xl grayscale hover:grayscale-0 transition duration-500">
+          
+          <div class="absolute -bottom-6 -left-6 bg-mec-card p-6 rounded-lg border border-white/10 z-20 shadow-2xl hidden sm:block">
+             <p class="font-display text-4xl font-black text-mec-brand mb-1">+15 Anos</p>
+             <p class="text-xs uppercase tracking-widest font-bold text-white/60">De experiência no mercado</p>
+          </div>
         </div>
-        <div class="bg-mec-card p-6 rounded-lg border border-white/5 hover:border-mec-brand/50 transition group cursor-pointer" onclick="abrirDrawerComServico('Freios e Suspensão')">
-          <i class="ph-duotone ph-car-profile text-4xl text-mec-brand mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="font-display text-lg font-bold uppercase mb-2">Freio & Suspensão</h3>
-          <p class="text-white/50 text-xs md:text-sm">Segurança total com troca de pastilhas e amortecedores.</p>
-        </div>
-        <div class="bg-mec-card p-6 rounded-lg border border-white/5 hover:border-mec-brand/50 transition group cursor-pointer" onclick="abrirDrawerComServico('Injeção Eletrônica')">
-          <i class="ph-duotone ph-lightning text-4xl text-mec-accent mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="font-display text-lg font-bold uppercase mb-2">Injeção Eletrônica</h3>
-          <p class="text-white/50 text-xs md:text-sm">Rastreio computadorizado para apagar aquela luz no painel.</p>
-        </div>
-        <div class="bg-mec-card p-6 rounded-lg border border-white/5 hover:border-mec-brand/50 transition group cursor-pointer" onclick="abrirDrawerComServico('Revisão Preventiva')">
-          <i class="ph-duotone ph-clipboard-text text-4xl text-mec-brand mb-4 group-hover:scale-110 transition"></i>
-          <h3 class="font-display text-lg font-bold uppercase mb-2">Revisão Geral</h3>
-          <p class="text-white/50 text-xs md:text-sm">Check-up de 30 itens antes de você pegar a estrada.</p>
+        
+        <div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold uppercase tracking-wide mb-6">Oficina de confiança <span class="text-mec-brand">não é mito.</span></h2>
+          <p class="text-white/60 text-lg mb-6 leading-relaxed">
+            Nascemos com o propósito de acabar com o estigma de que ir ao mecânico é sinônimo de dor de cabeça. Aqui na <strong>Nome da OFICINA</strong>, o cliente acompanha tudo de perto.
+          </p>
+          <p class="text-white/60 text-lg mb-8 leading-relaxed">
+            Contamos com scanners de última geração, elevadores modernos e uma equipe que realmente entende de mecânica preventiva e corretiva. O seu carro sai daqui novo de novo.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-6">
+             <div class="bg-mec-card border border-white/5 p-4 rounded-lg">
+                <i class="ph-duotone ph-desktop text-3xl text-mec-brand mb-2"></i>
+                <h4 class="font-display font-bold uppercase text-white">Scanner 3D</h4>
+                <p class="text-xs text-white/50 mt-1">Diagnóstico preciso</p>
+             </div>
+             <div class="bg-mec-card border border-white/5 p-4 rounded-lg">
+                <i class="ph-duotone ph-wrench text-3xl text-mec-brand mb-2"></i>
+                <h4 class="font-display font-bold uppercase text-white">Ferramental</h4>
+                <p class="text-xs text-white/50 mt-1">Tudo no padrão de fábrica</p>
+             </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-[#050505] border-t border-white/10 pt-16 pb-8 mt-10">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-10 mb-12">
+  <section id="servicos" class="py-24 bg-mec-card border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
         <div>
-          <div class="flex items-center gap-2 mb-4">
-            <i class="ph-fill ph-engine text-2xl text-mec-brand"></i>
-            <h3 class="font-display text-xl font-bold uppercase tracking-wide">Oficina <span class="text-mec-brand">Turbo</span></h3>
-          </div>
-          <p class="text-white/50 text-sm leading-relaxed">Sua oficina mecânica de confiança no bairro. Honestidade e peças de qualidade para o seu veículo rodar seguro.</p>
+          <h2 class="font-display text-4xl md:text-5xl font-bold uppercase tracking-wide">O que fazemos</h2>
+          <div class="w-20 h-1 bg-mec-brand mt-4"></div>
         </div>
+        <p class="text-white/60 max-w-md font-medium">Selecione o serviço desejado abaixo para iniciar um orçamento sem compromisso pelo WhatsApp.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-mec-bg p-8 rounded-lg border border-white/5 hover:border-mec-brand/50 transition duration-300 group cursor-pointer relative overflow-hidden" onclick="abrirDrawerComServico('Troca de Óleo e Filtros')">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-mec-brand/5 rounded-bl-full -mr-4 -mt-4 transition group-hover:scale-150"></div>
+          <i class="ph-duotone ph-drop text-5xl text-mec-brand mb-6 group-hover:scale-110 transition relative z-10"></i>
+          <h3 class="font-display text-xl font-bold uppercase mb-3 relative z-10">Óleo e Filtros</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-6 relative z-10">Lubrificantes originais e filtros de alta qualidade para maior vida útil do seu motor.</p>
+          <span class="text-xs font-bold text-mec-brand uppercase tracking-widest relative z-10 group-hover:text-white transition">Orçar <i class="ph-bold ph-arrow-right"></i></span>
+        </div>
+        
+        <div class="bg-mec-bg p-8 rounded-lg border border-white/5 hover:border-mec-brand/50 transition duration-300 group cursor-pointer relative overflow-hidden" onclick="abrirDrawerComServico('Freios e Suspensão')">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-mec-brand/5 rounded-bl-full -mr-4 -mt-4 transition group-hover:scale-150"></div>
+          <i class="ph-duotone ph-car-profile text-5xl text-mec-brand mb-6 group-hover:scale-110 transition relative z-10"></i>
+          <h3 class="font-display text-xl font-bold uppercase mb-3 relative z-10">Freio & Suspensão</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-6 relative z-10">Segurança total com troca de pastilhas, discos, amortecedores e alinhamento.</p>
+          <span class="text-xs font-bold text-mec-brand uppercase tracking-widest relative z-10 group-hover:text-white transition">Orçar <i class="ph-bold ph-arrow-right"></i></span>
+        </div>
+        
+        <div class="bg-mec-bg p-8 rounded-lg border border-white/5 hover:border-mec-brand/50 transition duration-300 group cursor-pointer relative overflow-hidden" onclick="abrirDrawerComServico('Injeção Eletrônica')">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-mec-brand/5 rounded-bl-full -mr-4 -mt-4 transition group-hover:scale-150"></div>
+          <i class="ph-duotone ph-lightning text-5xl text-mec-accent mb-6 group-hover:scale-110 transition relative z-10"></i>
+          <h3 class="font-display text-xl font-bold uppercase mb-3 relative z-10">Injeção Eletrônica</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-6 relative z-10">Rastreio computadorizado avançado para apagar aquela luz chata no painel.</p>
+          <span class="text-xs font-bold text-mec-brand uppercase tracking-widest relative z-10 group-hover:text-white transition">Orçar <i class="ph-bold ph-arrow-right"></i></span>
+        </div>
+        
+        <div class="bg-mec-bg p-8 rounded-lg border border-white/5 hover:border-mec-brand/50 transition duration-300 group cursor-pointer relative overflow-hidden" onclick="abrirDrawerComServico('Revisão Preventiva')">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-mec-brand/5 rounded-bl-full -mr-4 -mt-4 transition group-hover:scale-150"></div>
+          <i class="ph-duotone ph-clipboard-text text-5xl text-mec-brand mb-6 group-hover:scale-110 transition relative z-10"></i>
+          <h3 class="font-display text-xl font-bold uppercase mb-3 relative z-10">Revisão Geral</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-6 relative z-10">Check-up completo de 30 itens cruciais antes de você pegar a estrada com a família.</p>
+          <span class="text-xs font-bold text-mec-brand uppercase tracking-widest relative z-10 group-hover:text-white transition">Orçar <i class="ph-bold ph-arrow-right"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="avaliacoes" class="py-24 bg-mec-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="font-display text-4xl font-bold uppercase tracking-wide">O que dizem os clientes</h2>
+        <div class="w-20 h-1 bg-mec-brand mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-mec-card p-8 rounded-lg border border-white/5">
+           <div class="flex text-mec-accent mb-4 text-lg">
+             <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+           </div>
+           <p class="text-white/70 italic mb-6">"Levei meu carro em três lugares diferentes e ninguém resolvia o barulho da suspensão. O pessoal da Nome da OFICINA matou a charada na hora. Preço justo e muito honestos."</p>
+           <div class="flex items-center gap-3">
+             <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center font-bold">M</div>
+             <div>
+                <p class="font-bold text-sm uppercase">Marcos Silva</p>
+                <p class="text-[10px] text-white/50 uppercase tracking-widest">Cliente há 1 ano</p>
+             </div>
+           </div>
+        </div>
+
+        <div class="bg-mec-card p-8 rounded-lg border border-white/5">
+           <div class="flex text-mec-accent mb-4 text-lg">
+             <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+           </div>
+           <p class="text-white/70 italic mb-6">"O sistema de orçamento pelo WhatsApp deles é incrível. Mandei o problema, já me passaram uma estimativa e agendei tudo sem ligar. O serviço ficou perfeito!"</p>
+           <div class="flex items-center gap-3">
+             <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center font-bold">A</div>
+             <div>
+                <p class="font-bold text-sm uppercase">Ana Paula</p>
+                <p class="text-[10px] text-white/50 uppercase tracking-widest">Revisão Completa</p>
+             </div>
+           </div>
+        </div>
+
+        <div class="bg-mec-card p-8 rounded-lg border border-white/5">
+           <div class="flex text-mec-accent mb-4 text-lg">
+             <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+           </div>
+           <p class="text-white/70 italic mb-6">"Ambiente limpo, mecânicos uniformizados e me mandaram vídeo da peça velha estragada antes de trocar. Finalmente uma oficina de confiança no bairro."</p>
+           <div class="flex items-center gap-3">
+             <div class="w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center font-bold">R</div>
+             <div>
+                <p class="font-bold text-sm uppercase">Roberto Carlos</p>
+                <p class="text-[10px] text-white/50 uppercase tracking-widest">Troca de Correia</p>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-[#050505] border-t border-white/10 pt-20 pb-8 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12 mb-16">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-6">
+            <i class="ph-fill ph-engine text-3xl text-mec-brand"></i>
+            <h3 class="font-display text-2xl font-bold uppercase tracking-wide">Nome da <span class="text-mec-brand">OFICINA</span></h3>
+          </div>
+          <p class="text-white/50 text-sm leading-relaxed max-w-sm">
+            Sua oficina mecânica de confiança. Honestidade, tecnologia e peças de qualidade para o seu veículo rodar seguro todos os dias.
+          </p>
+        </div>
+        
         <div>
-          <h4 class="font-bold text-white mb-4 uppercase tracking-widest text-xs border-l-2 border-mec-brand pl-2">Contato</h4>
-          <ul class="space-y-3 text-sm text-white/60">
-            <li class="flex items-center gap-2"><i class="ph-fill ph-whatsapp-logo text-mec-brand text-lg"></i> (31) 90000-0000</li>
-            <li class="flex items-start gap-2"><i class="ph-fill ph-map-pin text-mec-brand text-lg mt-0.5"></i> Av. dos Mecânicos, 456 <br>Tupi - Belo Horizonte/MG</li>
+          <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs border-l-2 border-mec-brand pl-3">Contato</h4>
+          <ul class="space-y-4 text-sm text-white/60">
+            <li class="flex items-center gap-3 hover:text-mec-brand transition cursor-pointer"><i class="ph-fill ph-whatsapp-logo text-mec-brand text-xl"></i> (31) 90000-0000</li>
+            <li class="flex items-center gap-3 hover:text-mec-brand transition cursor-pointer"><i class="ph-fill ph-instagram-logo text-mec-brand text-xl"></i> @nomedaoficina</li>
+            <li class="flex items-start gap-3 mt-4"><i class="ph-fill ph-map-pin text-mec-brand text-xl mt-0.5"></i> <span>Av. dos Mecânicos, 456 <br>Tupi - Belo Horizonte/MG</span></li>
           </ul>
         </div>
+        
         <div>
-          <h4 class="font-bold text-white mb-4 uppercase tracking-widest text-xs border-l-2 border-mec-brand pl-2">Horário de Funcionamento</h4>
+          <h4 class="font-bold text-white mb-6 uppercase tracking-widest text-xs border-l-2 border-mec-brand pl-3">Funcionamento</h4>
           <ul class="space-y-3 text-sm text-white/60">
-            <li class="flex justify-between border-b border-white/5 pb-2"><span>Seg a Sex</span> <span>08:00 às 18:00</span></li>
-            <li class="flex justify-between border-b border-white/5 pb-2"><span>Sábados</span> <span>08:00 às 12:00</span></li>
+            <li class="flex justify-between border-b border-white/5 pb-2"><span>Seg a Sex</span> <span class="font-bold text-white">08:00 - 18:00</span></li>
+            <li class="flex justify-between border-b border-white/5 pb-2"><span>Sábados</span> <span class="font-bold text-white">08:00 - 12:00</span></li>
+            <li class="flex justify-between border-b border-white/5 pb-2 text-red-500/80"><span>Domingos</span> <span>Fechado</span></li>
           </ul>
         </div>
       </div>
+      
       <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
-        <p>© 2026 Oficina Turbo. Todos os direitos reservados.</p>
-        <p>Desenvolvido com <i class="ph-fill ph-code text-mec-brand"></i> por <a href="#" class="text-white hover:text-mec-brand transition font-bold">Mayan Soluções Tech</a></p>
+        <p>© 2026 Nome da OFICINA. Todos os direitos reservados.</p>
+        <p>Desenvolvido com <i class="ph-fill ph-code text-mec-brand"></i> por <a href="#" class="text-white hover:text-mec-brand transition font-bold uppercase tracking-widest">Mayan Soluções Tech</a></p>
       </div>
     </div>
   </footer>
@@ -177,35 +316,35 @@
         <div class="flex-1 overflow-y-auto p-6">
           <div class="mb-2">
             <span class="text-xs font-bold text-mec-brand uppercase tracking-widest">Passo 1 de 2</span>
-            <h3 class="text-xl font-bold mb-4 mt-1">O que seu carro precisa?</h3>
-            <p class="text-sm text-white/50 mb-6">Selecione os serviços ou descreva o problema.</p>
+            <h3 class="text-xl font-bold mb-4 mt-1 text-white">O que seu carro precisa?</h3>
+            <p class="text-sm text-white/50 mb-6">Selecione os serviços ou descreva o problema abaixo.</p>
           </div>
 
-          <div class="space-y-2 mb-6">
-            <label class="flex items-center gap-3 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
-              <input type="checkbox" class="chk-servico" value="Troca de Óleo e Filtros"> <span class="font-medium text-sm">Troca de Óleo e Filtros</span>
+          <div class="space-y-3 mb-8">
+            <label class="flex items-center gap-3 py-4 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
+              <input type="checkbox" class="chk-servico" value="Troca de Óleo e Filtros"> <span class="font-medium text-sm text-white">Troca de Óleo e Filtros</span>
             </label>
-            <label class="flex items-center gap-3 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
-              <input type="checkbox" class="chk-servico" value="Freios (Barulho ou trepidação)"> <span class="font-medium text-sm">Freios (Barulho ou trepidação)</span>
+            <label class="flex items-center gap-3 py-4 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
+              <input type="checkbox" class="chk-servico" value="Freios (Barulho ou trepidação)"> <span class="font-medium text-sm text-white">Freios (Barulho ou trepidação)</span>
             </label>
-            <label class="flex items-center gap-3 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
-              <input type="checkbox" class="chk-servico" value="Suspensão (Barulhos na rua)"> <span class="font-medium text-sm">Suspensão (Barulhos na rua)</span>
+            <label class="flex items-center gap-3 py-4 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
+              <input type="checkbox" class="chk-servico" value="Suspensão (Barulhos na rua)"> <span class="font-medium text-sm text-white">Suspensão (Barulhos na rua)</span>
             </label>
-            <label class="flex items-center gap-3 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
-              <input type="checkbox" class="chk-servico" value="Injeção Eletrônica (Luz acesa)"> <span class="font-medium text-sm">Luz acesa no painel</span>
+            <label class="flex items-center gap-3 py-4 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
+              <input type="checkbox" class="chk-servico" value="Injeção Eletrônica (Luz acesa)"> <span class="font-medium text-sm text-white">Luz da Injeção acesa no painel</span>
             </label>
-            <label class="flex items-center gap-3 py-3 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
-              <input type="checkbox" class="chk-servico" value="Revisão Preventiva (Viagem)"> <span class="font-medium text-sm">Revisão Geral (Viagem/Compra)</span>
+            <label class="flex items-center gap-3 py-4 px-4 bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg cursor-pointer transition">
+              <input type="checkbox" class="chk-servico" value="Revisão Preventiva (Viagem)"> <span class="font-medium text-sm text-white">Revisão Geral (Viagem/Compra)</span>
             </label>
           </div>
 
           <div>
-            <label class="block text-xs uppercase text-white/50 mb-2 font-bold">Relato do problema (Opcional)</label>
-            <textarea id="txt-sintoma" rows="3" placeholder="Ex: Meu carro está fazendo um tec-tec quando viro o volante..." class="w-full bg-mec-bg border border-white/10 rounded-lg p-3 outline-none focus:border-mec-brand text-sm resize-none"></textarea>
+            <label class="block text-xs uppercase text-white/50 mb-3 font-bold">Relato do problema (Opcional mas ajuda!)</label>
+            <textarea id="txt-sintoma" rows="4" placeholder="Ex: Meu carro está fazendo um tec-tec quando viro o volante e falha na subida..." class="w-full bg-mec-bg border border-white/10 rounded-lg p-4 outline-none focus:border-mec-brand text-sm resize-none text-white"></textarea>
           </div>
         </div>
         <div class="p-6 bg-mec-bg border-t border-white/5">
-          <button onclick="avancarParaVeiculo()" class="w-full bg-white text-black hover:bg-zinc-200 font-display font-bold uppercase tracking-widest py-4 rounded-sm transition flex justify-center items-center gap-2">
+          <button onclick="avancarParaVeiculo()" class="w-full bg-white text-black hover:bg-zinc-200 font-display font-bold uppercase tracking-widest py-4 rounded-sm transition flex justify-center items-center gap-2 text-lg">
             Continuar <i class="ph-bold ph-arrow-right"></i>
           </button>
         </div>
@@ -213,35 +352,36 @@
 
       <div id="view-veiculo" class="flex flex-col h-full w-full absolute inset-0 bg-mec-card transition-transform duration-300 transform translate-x-full">
         <div class="p-6 border-b border-white/5 flex items-center gap-3 bg-mec-bg">
-          <button onclick="mostrarView('servicos')" class="text-white/50 hover:text-white p-1"><i class="ph-bold ph-arrow-left text-xl"></i></button>
+          <button onclick="mostrarView('servicos')" class="text-white/50 hover:text-white p-1 bg-white/5 rounded"><i class="ph-bold ph-arrow-left text-xl"></i></button>
           <h2 class="font-display text-xl font-bold uppercase tracking-wide">Dados do Veículo</h2>
         </div>
         <div class="flex-1 overflow-y-auto p-6">
-          <div class="mb-6">
+          <div class="mb-8">
             <span class="text-xs font-bold text-mec-brand uppercase tracking-widest">Passo 2 de 2</span>
-            <h3 class="text-xl font-bold mt-1">Só os dados básicos da nave:</h3>
+            <h3 class="text-xl font-bold mt-1 text-white">Só os dados básicos da nave:</h3>
+            <p class="text-sm text-white/50 mt-2">Para já adiantarmos as peças certas no sistema.</p>
           </div>
           
-          <div class="space-y-5">
+          <div class="space-y-6">
             <div>
-              <label class="block text-[11px] uppercase text-white/50 mb-1 font-bold">Seu Nome</label>
-              <input type="text" id="car-nome" placeholder="Como devemos te chamar?" class="w-full bg-mec-bg border border-white/10 rounded-lg p-3 outline-none focus:border-mec-brand text-sm">
+              <label class="block text-[11px] uppercase text-white/50 mb-2 font-bold">Seu Nome *</label>
+              <input type="text" id="car-nome" placeholder="Como devemos te chamar?" class="w-full bg-mec-bg border border-white/10 rounded-lg p-4 outline-none focus:border-mec-brand text-sm text-white transition">
             </div>
             
             <div>
-              <label class="block text-[11px] uppercase text-white/50 mb-1 font-bold">Marca e Modelo do Carro</label>
-              <input type="text" id="car-modelo" placeholder="Ex: Fiat Argo 1.0" class="w-full bg-mec-bg border border-white/10 rounded-lg p-3 outline-none focus:border-mec-brand text-sm">
+              <label class="block text-[11px] uppercase text-white/50 mb-2 font-bold">Marca e Modelo do Carro *</label>
+              <input type="text" id="car-modelo" placeholder="Ex: Fiat Argo 1.0" class="w-full bg-mec-bg border border-white/10 rounded-lg p-4 outline-none focus:border-mec-brand text-sm text-white transition">
             </div>
             
             <div>
-              <label class="block text-[11px] uppercase text-white/50 mb-1 font-bold">Ano</label>
-              <input type="text" id="car-ano" placeholder="Ex: 2021" class="w-full bg-mec-bg border border-white/10 rounded-lg p-3 outline-none focus:border-mec-brand text-sm">
+              <label class="block text-[11px] uppercase text-white/50 mb-2 font-bold">Ano do Carro *</label>
+              <input type="number" id="car-ano" placeholder="Ex: 2021" class="w-full bg-mec-bg border border-white/10 rounded-lg p-4 outline-none focus:border-mec-brand text-sm text-white transition">
             </div>
           </div>
         </div>
         <div class="p-6 bg-mec-bg border-t border-white/5">
-          <button onclick="gerarOrcamento()" class="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-display font-bold uppercase tracking-widest py-4 rounded-sm transition flex justify-center items-center gap-2 shadow-lg">
-            <i class="ph-bold ph-whatsapp-logo text-xl"></i> Ver Prévia e Enviar
+          <button onclick="gerarOrcamento()" class="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-display font-bold uppercase tracking-widest py-4 rounded-sm transition flex justify-center items-center gap-2 shadow-lg text-lg">
+            <i class="ph-bold ph-whatsapp-logo text-2xl"></i> Ver Prévia e Enviar
           </button>
         </div>
       </div>
@@ -252,70 +392,83 @@
     
     <div class="md:hidden w-full h-full bg-mec-wpp_bg flex flex-col wpp-pattern">
       <div class="bg-mec-wpp_header px-4 py-3 flex items-center gap-3 z-10 shadow-md">
-        <button onclick="fecharSimulador()" class="text-white hover:text-mec-wpp_text p-1"><i class="ph-bold ph-arrow-left text-xl"></i></button>
-        <div class="w-10 h-10 rounded-full bg-zinc-700 overflow-hidden shrink-0 flex items-center justify-center text-white/50">
-          <i class="ph-fill ph-engine text-2xl"></i>
+        <button onclick="fecharSimulador()" class="text-white hover:text-mec-wpp_text p-2 -ml-2"><i class="ph-bold ph-arrow-left text-xl"></i></button>
+        <div class="w-10 h-10 rounded-full bg-zinc-700 overflow-hidden shrink-0 flex items-center justify-center text-white/50 border border-white/20">
+          <i class="ph-fill ph-engine text-2xl text-white"></i>
         </div>
         <div class="flex-1">
-          <h3 class="font-semibold text-white text-base leading-tight">Oficina Turbo</h3>
-          <p class="text-white/50 text-[11px]">Conta comercial</p>
+          <h3 class="font-semibold text-white text-[17px] leading-tight">Nome da OFICINA</h3>
+          <p class="text-white/70 text-[13px]">Conta comercial</p>
         </div>
-        <i class="ph-fill ph-video-camera text-xl text-white"></i>
-        <i class="ph-fill ph-phone text-xl text-white ml-2"></i>
+        <div class="flex items-center gap-4 text-white">
+            <i class="ph-fill ph-video-camera text-xl"></i>
+            <i class="ph-fill ph-phone text-xl"></i>
+        </div>
       </div>
       <div class="flex-1 p-4 overflow-y-auto flex flex-col justify-end">
-        <div class="bg-mec-wpp_bubble text-mec-wpp_text p-3 rounded-2xl rounded-tr-none max-w-[90%] self-end shadow-sm relative mb-2">
-          <p id="texto-simulador-mobile" class="text-sm whitespace-pre-wrap leading-relaxed"></p>
-          <span class="text-[10px] text-white/50 float-right mt-1 ml-3">Agora <i class="ph-fill ph-checks text-[#53bdeb] ml-1"></i></span>
+        <div class="flex justify-center mb-4">
+            <span class="bg-[#182229] text-[#8696A0] text-xs font-medium px-3 py-1 rounded-lg uppercase tracking-widest shadow-sm">Hoje</span>
+        </div>
+        <div class="bg-mec-wpp_bubble text-mec-wpp_text p-3 pb-6 rounded-2xl rounded-tr-none max-w-[92%] self-end shadow-md relative mb-2">
+          <p id="texto-simulador-mobile" class="text-[15px] whitespace-pre-wrap leading-relaxed font-sans"></p>
+          <span class="text-[11px] text-white/50 absolute bottom-1 right-2">Agora <i class="ph-fill ph-checks text-[#53bdeb] ml-1"></i></span>
         </div>
       </div>
-      <div class="bg-mec-wpp_header p-3 z-10 flex flex-col gap-3">
-        <button onclick="enviarPedidoReal()" class="w-full bg-[#00A884] hover:bg-[#008f6f] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg animate-pulse">
-          <i class="ph-fill ph-paper-plane-right text-xl"></i> Enviar Mensagem Real
+      <div class="bg-mec-wpp_header p-4 z-10 flex flex-col gap-3">
+        <button onclick="enviarPedidoReal()" class="w-full bg-[#00A884] hover:bg-[#008f6f] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg animate-pulse text-lg">
+          <i class="ph-fill ph-paper-plane-right text-2xl"></i> Enviar p/ a Oficina
         </button>
       </div>
     </div>
 
-    <div class="hidden md:flex w-full max-w-6xl h-[85vh] bg-mec-wpp_sidebar rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+    <div class="hidden md:flex w-full max-w-5xl h-[85vh] bg-mec-wpp_sidebar rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+      
       <div class="w-[30%] border-r border-mec-wpp_border flex flex-col bg-mec-wpp_sidebar z-10">
         <div class="bg-mec-wpp_header h-16 flex items-center justify-between px-4">
           <div class="w-10 h-10 rounded-full bg-zinc-700"></div>
           <div class="flex gap-4 text-[#AEBAC1]"><i class="ph-fill ph-users text-xl"></i><i class="ph-fill ph-chat-teardrop-text text-xl"></i><i class="ph-fill ph-dots-three-vertical text-xl"></i></div>
         </div>
         <div class="p-2 border-b border-mec-wpp_border">
-          <div class="bg-mec-wpp_header rounded-lg flex items-center px-3 py-2 text-[#AEBAC1]"><i class="ph-regular ph-magnifying-glass mr-3"></i><span class="text-sm">Pesquisar ou começar uma nova...</span></div>
+          <div class="bg-mec-wpp_header rounded-lg flex items-center px-3 py-2 text-[#AEBAC1]"><i class="ph-regular ph-magnifying-glass mr-3"></i><span class="text-sm">Pesquisar ou começar...</span></div>
         </div>
         <div class="flex-1 overflow-y-auto">
           <div class="flex items-center gap-3 px-4 py-3 bg-[#2A3942] cursor-pointer">
-            <div class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-white/50 shrink-0"><i class="ph-fill ph-engine text-2xl"></i></div>
-            <div class="flex-1 border-b border-mec-wpp_border pb-3">
-              <div class="flex justify-between items-center"><h4 class="text-white text-base">Oficina Turbo</h4><span class="text-[#00A884] text-xs">Agora</span></div>
-              <p class="text-white/60 text-sm truncate">Solicitação de Orçame...</p>
+            <div class="w-12 h-12 rounded-full bg-mec-brand flex items-center justify-center text-white shrink-0"><i class="ph-fill ph-engine text-2xl"></i></div>
+            <div class="flex-1 border-b border-mec-wpp_border pb-3 -mb-3">
+              <div class="flex justify-between items-center mb-1"><h4 class="text-white text-base">Nome da OFICINA</h4><span class="text-[#00A884] text-xs">Agora</span></div>
+              <p class="text-white/60 text-sm truncate"><i class="ph-fill ph-checks text-[#53bdeb] mr-1"></i> Mensagem enviada...</p>
             </div>
           </div>
         </div>
       </div>
+      
       <div class="w-[70%] flex flex-col bg-mec-wpp_bg wpp-pattern relative">
         <div class="bg-mec-wpp_header h-16 flex items-center justify-between px-4 z-10">
           <div class="flex items-center gap-4">
-            <div class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-white/50 shrink-0"><i class="ph-fill ph-engine text-2xl"></i></div>
-            <div><h3 class="text-white font-medium">Oficina Turbo</h3><p class="text-white/50 text-xs">Conta comercial</p></div>
+            <div class="w-10 h-10 rounded-full bg-mec-brand flex items-center justify-center text-white shrink-0"><i class="ph-fill ph-engine text-2xl"></i></div>
+            <div><h3 class="text-white font-medium text-base">Nome da OFICINA</h3><p class="text-white/60 text-[13px]">Conta comercial</p></div>
           </div>
-          <button onclick="fecharSimulador()" class="bg-red-500/20 text-red-500 hover:bg-red-500 hover:text-white px-4 py-2 rounded-lg text-sm font-bold transition">Cancelar</button>
+          <div class="flex items-center gap-4">
+              <i class="ph-bold ph-magnifying-glass text-xl text-[#AEBAC1]"></i>
+              <i class="ph-bold ph-dots-three-vertical text-xl text-[#AEBAC1]"></i>
+              <button onclick="fecharSimulador()" class="ml-2 text-white/50 hover:text-red-500 transition"><i class="ph-bold ph-x text-2xl"></i></button>
+          </div>
         </div>
+        
         <div class="flex-1 p-8 overflow-y-auto flex flex-col justify-end">
           <div class="bg-[#182229] text-[#8696A0] text-xs font-medium px-4 py-2 rounded-lg self-center mb-6 uppercase tracking-widest shadow-md">Pré-visualização do Orçamento</div>
-          <div class="bg-mec-wpp_bubble text-mec-wpp_text p-4 rounded-xl rounded-tr-none max-w-[70%] self-end shadow-md relative mb-4">
+          <div class="bg-mec-wpp_bubble text-mec-wpp_text p-4 pb-6 rounded-xl rounded-tr-none max-w-[75%] self-end shadow-md relative mb-4">
             <p id="texto-simulador-desktop" class="text-[15px] whitespace-pre-wrap leading-relaxed font-sans"></p>
-            <div class="text-[11px] text-white/50 text-right mt-2">Agora <i class="ph-fill ph-checks text-[#53bdeb] ml-1"></i></div>
+            <div class="text-[11px] text-white/50 absolute bottom-1 right-2">Agora <i class="ph-fill ph-checks text-[#53bdeb] ml-1"></i></div>
           </div>
         </div>
-        <div class="bg-mec-wpp_header p-4 z-10 flex items-center gap-4">
+        
+        <div class="bg-mec-wpp_header p-4 z-10 flex items-center gap-4 h-[72px]">
           <i class="ph-regular ph-smiley text-2xl text-[#8696A0]"></i>
           <i class="ph-regular ph-paperclip text-2xl text-[#8696A0]"></i>
-          <div class="flex-1 bg-[#2A3942] rounded-lg px-4 py-3 text-white/40 text-sm">Mensagem montada automaticamente...</div>
+          <div class="flex-1 bg-[#2A3942] rounded-lg px-4 py-3 text-white/40 text-[15px]">A mensagem foi montada e está pronta...</div>
           <button onclick="enviarPedidoReal()" class="bg-[#00A884] hover:bg-[#008f6f] text-white w-12 h-12 rounded-full flex items-center justify-center transition shadow-lg hover:scale-110">
-            <i class="ph-fill ph-paper-plane-tilt text-xl"></i>
+            <i class="ph-fill ph-paper-plane-tilt text-2xl"></i>
           </button>
         </div>
       </div>
@@ -323,9 +476,12 @@
   </div>
 
   <script>
+    // ============================================
+    // CONFIGURAÇÕES GERAIS
+    // ============================================
     const NUMERO_WHATSAPP = "5531980159559"; 
 
-    /* NAVEGAÇÃO DA GAVETA */
+    // CONTROLES DE INTERFACE
     const overlay = document.getElementById('drawer-overlay');
     const content = document.getElementById('drawer-content');
     const modalSimulador = document.getElementById('modal-simulador');
@@ -369,26 +525,40 @@
       const relato = document.getElementById('txt-sintoma').value.trim();
       
       if(selecionados === 0 && relato === "") {
-        alert("Ei! Marque pelo menos um serviço ou descreva o problema do carro.");
+        alert("Opa! Marque pelo menos um serviço na lista ou descreva o problema do carro para a gente poder te ajudar melhor.");
         return;
       }
       mostrarView('veiculo');
     }
 
-    /* GERAÇÃO DO TEXTO E SIMULADOR */
+    // ============================================
+    // LÓGICA DO WHATSAPP
+    // ============================================
+    
+    // FUNÇÃO DO BOTÃO DE VENDA ("Ver como chega no zap")
+    function demonstrarSimulador() {
+        const texto = "🔧 *SOLICITAÇÃO DE ORÇAMENTO ONLINE*\n\n👤 *Cliente:* João Silva (Exemplo)\n🚗 *Veículo:* Honda Civic (Ano: 2019)\n\n📋 *O que precisa ser verificado:*\n▪️ Troca de Óleo e Filtros\n▪️ Injeção Eletrônica (Luz acesa)\n\n💬 *Relatos Extras:*\n_\"O carro tá falhando quando acelero e a luz da injeção não apaga. Preciso de um diagnóstico rápido por favor.\"_\n";
+        
+        document.getElementById('texto-simulador-mobile').innerHTML = texto.replace(/\n/g, '<br>').replace(/\*(.*?)\*/g, '<strong>$1</strong>').replace(/_(.*?)_/g, '<em>$1</em>');
+        document.getElementById('texto-simulador-desktop').innerHTML = texto.replace(/\n/g, '<br>').replace(/\*(.*?)\*/g, '<strong>$1</strong>').replace(/_(.*?)_/g, '<em>$1</em>');
+        
+        modalSimulador.classList.remove('hidden');
+        setTimeout(() => modalSimulador.classList.remove('opacity-0'), 10);
+    }
+
     function gerarOrcamento() {
       const nome = document.getElementById('car-nome').value.trim();
       const modelo = document.getElementById('car-modelo').value.trim();
       const ano = document.getElementById('car-ano').value.trim();
 
       if(!nome || !modelo || !ano) {
-        alert("Preencha seu nome, o modelo do carro e o ano para continuarmos!");
+        alert("Preencha seu nome, o modelo do carro e o ano para podermos continuar!");
         return;
       }
 
       fecharDrawer();
 
-      // Monta a Mensagem
+      // Monta a Mensagem bruta
       let texto = "🔧 *SOLICITAÇÃO DE ORÇAMENTO ONLINE*\n\n";
       texto += `👤 *Cliente:* ${nome}\n`;
       texto += `🚗 *Veículo:* ${modelo} (Ano: ${ano})\n`;
@@ -398,7 +568,7 @@
       if(serviços.length > 0) {
         serviços.forEach(cb => texto += `▪️ ${cb.value}\n`);
       } else {
-        texto += `▪️ Avaliação técnica solicitada.\n`;
+        texto += `▪️ Avaliação técnica geral solicitada.\n`;
       }
 
       const relato = document.getElementById('txt-sintoma').value.trim();
@@ -406,11 +576,14 @@
         texto += `\n💬 *Relatos Extras:*\n_"${relato}"_\n`;
       }
 
-      // Popula os simuladores
-      document.getElementById('texto-simulador-mobile').textContent = texto;
-      document.getElementById('texto-simulador-desktop').textContent = texto;
+      // Aplica formatação HTML para o Simulador Visual
+      const htmlFormatado = texto.replace(/\n/g, '<br>').replace(/\*(.*?)\*/g, '<strong>$1</strong>').replace(/_(.*?)_/g, '<em>$1</em>');
 
-      // Abre o Modal Unificado (Igual o Tupi Lanches)
+      // Popula os simuladores
+      document.getElementById('texto-simulador-mobile').innerHTML = htmlFormatado;
+      document.getElementById('texto-simulador-desktop').innerHTML = htmlFormatado;
+
+      // Abre a tela do WhatsApp Falso
       setTimeout(() => {
         modalSimulador.classList.remove('hidden');
         setTimeout(() => modalSimulador.classList.remove('opacity-0'), 10);
@@ -421,20 +594,40 @@
       modalSimulador.classList.add('opacity-0');
       setTimeout(() => {
         modalSimulador.classList.add('hidden');
-        abrirDrawer(); // Se ele cancelar, volta pra gaveta com os dados salvos
-        mostrarView('veiculo');
       }, 300);
     }
 
+    // Pega o texto puro (sem as tags HTML <strong> e <br>) pra jogar na URL do WhatsApp oficial
     function enviarPedidoReal() {
-      const textoMensagem = document.getElementById('texto-simulador-desktop').textContent;
-      const textoCodificado = encodeURIComponent(textoMensagem);
+      // Reconstroi o texto sem HTML para não ir bugado pra URL
+      const nome = document.getElementById('car-nome').value.trim() || "João Silva (Exemplo)";
+      const modelo = document.getElementById('car-modelo').value.trim() || "Honda Civic";
+      const ano = document.getElementById('car-ano').value.trim() || "2019";
+      
+      let textoPuro = "🔧 *SOLICITAÇÃO DE ORÇAMENTO ONLINE*\n\n";
+      textoPuro += `👤 *Cliente:* ${nome}\n`;
+      textoPuro += `🚗 *Veículo:* ${modelo} (Ano: ${ano})\n`;
+      
+      textoPuro += `\n📋 *O que precisa ser verificado:*\n`;
+      const serviços = document.querySelectorAll('.chk-servico:checked');
+      if(serviços.length > 0) {
+        serviços.forEach(cb => textoPuro += `▪️ ${cb.value}\n`);
+      } else {
+        textoPuro += `▪️ Avaliação técnica geral solicitada.\n`;
+      }
+
+      const relato = document.getElementById('txt-sintoma').value.trim();
+      if(relato) {
+        textoPuro += `\n💬 *Relatos Extras:*\n_"${relato}"_\n`;
+      }
+
+      const textoCodificado = encodeURIComponent(textoPuro);
       window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${textoCodificado}`, '_blank');
       
-      // Reseta e fecha tudo
-      modalSimulador.classList.add('opacity-0');
-      setTimeout(() => modalSimulador.classList.add('hidden'), 300);
-      document.querySelectorAll('input[type="text"], textarea').forEach(i => i.value = '');
+      fecharSimulador();
+      
+      // Limpa formulário
+      document.querySelectorAll('input[type="text"], input[type="number"], textarea').forEach(i => i.value = '');
       document.querySelectorAll('.chk-servico').forEach(cb => cb.checked = false);
     }
   </script>
