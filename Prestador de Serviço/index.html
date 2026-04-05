@@ -1,515 +1,648 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maria Limpeza Premium | Serviços Domésticos</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Outfit', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif']
-          },
-          colors: {
-            clean: {
-              bg: '#F0FDF4',       /* Fundo bem claro / esverdeado clean */
-              card: '#FFFFFF',
-              text: '#0F172A',
-              brand: '#0891B2',    /* Ciano escuro - Confiança e Água */
-              light: '#CFFAFE',    /* Ciano bem clarinho */
-              accent: '#10B981',   /* Verde frescor */
-              wpp_bg: '#0B141A', wpp_header: '#202C33', wpp_sidebar: '#111B21', wpp_border: '#222D34', wpp_bubble: '#005C4B', wpp_text: '#E9EDEF'
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template | Prestador de Serviço VIP</title>
+    <meta name="description" content="Template Premium para Profissionais Autônomos com Simulador Multiplataforma.">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Outfit', 'sans-serif'] },
+                    boxShadow: { 'pro': '0 25px 50px -12px rgba(0, 0, 0, 0.15)', 'glow': '0 0 20px var(--theme-light)' }
+                }
             }
-          }
         }
-      }
-    }
-  </script>
-  <style>
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #F0FDF4; }
-    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-    .wpp-pattern { background-image: url('https://w0.peakpx.com/wallpaper/818/148/HD-wallpaper-whatsapp-background-solid-color-pattern.jpg'); background-size: cover; background-blend-mode: overlay; opacity: 0.9; }
-    input[type="checkbox"], input[type="radio"] { accent-color: #0891B2; width: 20px; height: 20px; cursor: pointer; }
-    .bubble-bg { background-image: radial-gradient(#CFFAFE 2px, transparent 2px); background-size: 24px 24px; }
-  </style>
+    </script>
+    <style>
+        :root { --theme-color: #06b6d4; --theme-light: #ecfeff; --theme-dark: #0891b2; }
+        body { background-color: #f4f4f9; color: #0f172a; overflow-x: hidden; }
+        
+        .bg-theme { background-color: var(--theme-color); transition: background-color 0.5s ease; }
+        .bg-theme-light { background-color: var(--theme-light); transition: background-color 0.5s ease; }
+        .text-theme { color: var(--theme-color); transition: color 0.5s ease; }
+        .border-theme { border-color: var(--theme-color); transition: border-color 0.5s ease; }
+        
+        .glass-nav { background: rgba(255, 255, 255, 0.85); border-bottom: 1px solid rgba(0,0,0,0.05); backdrop-filter: blur(16px); }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--theme-color); border-radius: 10px; }
+        
+        .custom-checkbox:checked + div { background-color: var(--theme-color); border-color: var(--theme-color); }
+        .custom-checkbox:checked + div i { opacity: 1 !important; transform: scale(1) !important; }
+        
+        .fade-transition { transition: opacity 0.4s ease, transform 0.4s ease; }
+        .fade-out { opacity: 0; transform: translateY(15px); }
+
+        /* Animações Mockup Device */
+        .device-transition { transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        
+        /* Padrão WhatsApp (Usado no CSS inline) */
+        .wa-bg { background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); background-size: cover; background-position: center; }
+    </style>
 </head>
-<body class="bg-clean-bg text-clean-text antialiased selection:bg-clean-brand selection:text-white">
+<body class="antialiased selection:bg-theme selection:text-white">
 
-  <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-40 border-b border-clean-light shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-clean-light text-clean-brand flex items-center justify-center">
-          <i class="ph-fill ph-sparkle text-2xl"></i>
-        </div>
-        <div>
-          <h1 class="font-display text-xl font-bold leading-none tracking-tight">Maria <span class="text-clean-brand">Limpeza</span></h1>
-          <p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold mt-1">Premium</p>
-        </div>
-      </div>
-      <button onclick="abrirDrawer()" class="hidden md:flex bg-clean-brand hover:bg-cyan-700 text-white px-6 py-2.5 rounded-full font-bold text-sm items-center gap-2 transition shadow-md shadow-cyan-500/30">
-        <i class="ph-bold ph-calendar-plus"></i> Agendar Faxina
-      </button>
+    <!-- AVISO DE TEMPLATE NO TOPO -->
+    <div class="bg-slate-900 text-white text-center py-2 text-xs font-bold tracking-widest uppercase flex items-center justify-center gap-2 z-50 relative shadow-md">
+        <i class="ph-fill ph-arrows-left-right text-theme animate-pulse text-lg"></i>
+        <span>Demonstração: Troque de profissão nas setas laterais</span>
     </div>
-  </nav>
 
-  <header class="relative w-full py-16 md:py-24 overflow-hidden bubble-bg">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-12 relative z-10">
-      <div class="max-w-xl text-center md:text-left">
-        <div class="inline-flex items-center gap-2 bg-white border border-clean-brand/20 text-clean-brand px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
-          <i class="ph-fill ph-star text-yellow-400"></i> Mais de 500 casas atendidas
+    <!-- SETAS DE NAVEGAÇÃO LATERAIS -->
+    <button onclick="mudarProfissao(-1)" class="fixed left-2 sm:left-6 top-1/2 -translate-y-1/2 z-40 w-12 h-12 sm:w-16 sm:h-16 bg-white/90 backdrop-blur border border-slate-200 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center justify-center text-slate-500 hover:text-theme hover:scale-110 transition duration-300 group">
+        <i class="ph-bold ph-caret-left text-2xl sm:text-3xl group-hover:-translate-x-1 transition"></i>
+    </button>
+    <button onclick="mudarProfissao(1)" class="fixed right-2 sm:right-6 top-1/2 -translate-y-1/2 z-40 w-12 h-12 sm:w-16 sm:h-16 bg-white/90 backdrop-blur border border-slate-200 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center justify-center text-slate-500 hover:text-theme hover:scale-110 transition duration-300 group">
+        <i class="ph-bold ph-caret-right text-2xl sm:text-3xl group-hover:translate-x-1 transition"></i>
+    </button>
+
+    <!-- NAVBAR PREMIUM -->
+    <nav class="fixed w-full z-30 glass-nav transition-all duration-300 top-8" id="navbar">
+        <div class="max-w-7xl mx-auto px-16 sm:px-24 h-20 flex justify-between items-center">
+            <a href="#topo" class="flex items-center gap-4 group">
+                <div class="w-11 h-11 rounded-2xl bg-theme-light text-theme flex items-center justify-center shadow-inner border border-theme/20 group-hover:rotate-6 transition duration-300" id="nav-icon">
+                    <i class="ph-fill ph-broom text-2xl"></i>
+                </div>
+                <div>
+                    <span class="font-display font-black text-xl sm:text-2xl tracking-tight text-slate-900 block leading-none" id="nav-nome">[Nome do Profissional]</span>
+                    <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold" id="nav-cargo">Diarista Especializada</span>
+                </div>
+            </a>
+
+            <a href="#servicos" class="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-theme transition hidden sm:flex items-center gap-2 shadow-lg">
+                Agendar Horário <i class="ph-bold ph-arrow-right"></i>
+            </a>
         </div>
-        <h2 class="font-display text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.1] mb-6 text-slate-800">
-          Sua casa brilhando sem você <span class="text-clean-brand">fazer esforço.</span>
-        </h2>
-        <p class="text-slate-600 text-lg md:text-xl mb-8 leading-relaxed">
-          Chegue em casa depois do trabalho e encontre tudo cheiroso, organizado e no lugar. Serviço de confiança e alto padrão para a sua família.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-          <button onclick="abrirDrawer()" class="bg-clean-brand hover:bg-cyan-700 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center justify-center gap-3 transition shadow-[0_10px_20px_rgba(8,145,178,0.3)] hover:-translate-y-1">
-            <i class="ph-bold ph-calendar-check text-xl"></i> Ver Valores e Agendar
-          </button>
-        </div>
-      </div>
-      
-      <div class="relative w-full max-w-md mx-auto md:mx-0">
-        <div class="absolute inset-0 bg-clean-brand rounded-full blur-3xl opacity-20"></div>
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80" alt="Profissional de Limpeza" class="relative z-10 rounded-3xl shadow-2xl border-4 border-white object-cover h-[400px] w-full">
-        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 z-20 border border-slate-100">
-          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600"><i class="ph-bold ph-shield-check text-2xl"></i></div>
-          <div>
-            <p class="font-bold text-slate-800 leading-none">100% Seguro</p>
-            <p class="text-xs text-slate-500">Referências verificadas</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+    </nav>
 
-  <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="font-display text-3xl md:text-4xl font-extrabold text-slate-800">Meus Serviços</h2>
-        <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Escolha o pacote ideal para a necessidade da sua casa. Valores justos e sem surpresas.</p>
-      </div>
+    <!-- CONTAINER DINÂMICO DE CONTEÚDO -->
+    <main id="conteudo-dinamico" class="fade-transition pt-28">
+        <!-- HERO SECTION -->
+        <header class="pt-20 pb-16 px-14 sm:px-24 max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+                <div class="z-10">
+                    <span class="inline-flex items-center gap-2 text-theme text-xs font-bold uppercase tracking-widest mb-6 bg-theme-light rounded-full px-4 py-2 border border-theme/20 shadow-sm" id="hero-badge">
+                        <i class="ph-fill ph-star"></i> Profissional 5 Estrelas
+                    </span>
+                    <h1 class="text-5xl lg:text-7xl font-display font-black text-slate-900 mb-6 leading-[1.05]" id="hero-title">
+                        Deixe a limpeza pesada <span class="text-theme">comigo.</span>
+                    </h1>
+                    <p class="text-slate-500 mb-10 text-lg leading-relaxed max-w-lg font-medium" id="hero-desc">
+                        Chega de perder tempo no WhatsApp passando orçamento. O cliente entra, simula e o pedido cai perfeito pra você aceitar.
+                    </p>
 
-      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        
-        <article class="bg-clean-bg rounded-3xl p-8 border border-clean-light hover:shadow-xl transition duration-300 relative group cursor-pointer" onclick="abrirDrawerComServico('Faxina Padrão', 150)">
-          <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-clean-brand shadow-sm mb-6 group-hover:scale-110 transition">
-            <i class="ph-fill ph-broom text-3xl"></i>
-          </div>
-          <h3 class="font-display text-2xl font-bold mb-2">Faxina Padrão</h3>
-          <p class="text-slate-600 mb-6 text-sm line-clamp-3 h-14">Ideal para manutenção semanal ou quinzenal. Limpeza de pisos, poeira, banheiros, cozinha (superfícies) e organização geral.</p>
-          <div class="flex items-end gap-2 mb-6">
-            <span class="text-sm text-slate-500 mb-1">A partir de</span>
-            <span class="font-display font-extrabold text-3xl text-clean-brand">R$ 150</span>
-          </div>
-          <button class="w-full py-3 rounded-xl border-2 border-clean-brand text-clean-brand font-bold group-hover:bg-clean-brand group-hover:text-white transition">
-            Selecionar Padrão
-          </button>
-        </article>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#servicos" class="bg-theme text-white px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest hover:shadow-glow transition text-center flex justify-center items-center gap-2 shadow-lg">
+                            Simular Orçamento <i class="ph-bold ph-magic-wand"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <article class="bg-white rounded-3xl p-8 border-2 border-clean-brand shadow-[0_15px_30px_rgba(8,145,178,0.1)] relative group cursor-pointer" onclick="abrirDrawerComServico('Faxina Pesada (Geral)', 220)">
-          <div class="absolute top-0 right-8 transform -translate-y-1/2 bg-clean-brand text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Mais Escolhida</div>
-          <div class="w-14 h-14 bg-clean-light rounded-2xl flex items-center justify-center text-clean-brand shadow-sm mb-6 group-hover:scale-110 transition">
-            <i class="ph-fill ph-drop text-3xl"></i>
-          </div>
-          <h3 class="font-display text-2xl font-bold mb-2">Faxina Pesada</h3>
-          <p class="text-slate-600 mb-6 text-sm line-clamp-3 h-14">A famosa "Geral". Inclui lavagem pesada de banheiros, limpeza de azulejos, vidros, interior de janelas e remoção de gordura incrustada.</p>
-          <div class="flex items-end gap-2 mb-6">
-            <span class="text-sm text-slate-500 mb-1">A partir de</span>
-            <span class="font-display font-extrabold text-3xl text-clean-brand">R$ 220</span>
-          </div>
-          <button class="w-full py-3 rounded-xl bg-clean-brand text-white font-bold hover:bg-cyan-700 transition shadow-md">
-            Selecionar Pesada
-          </button>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <footer class="bg-slate-900 pt-16 pb-8 text-slate-300">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-10 mb-12">
-        <div>
-          <div class="flex items-center gap-2 mb-4 text-white">
-            <i class="ph-fill ph-sparkle text-2xl text-clean-brand"></i>
-            <h3 class="font-display text-xl font-bold">Maria Limpeza</h3>
-          </div>
-          <p class="text-sm leading-relaxed text-slate-400">Tranquilidade e cheirinho de limpeza para a sua casa. Atendimento dedicado no Tupi e região.</p>
-        </div>
-        <div>
-          <h4 class="font-bold text-white mb-4 uppercase tracking-widest text-xs">Contato Direto</h4>
-          <ul class="space-y-3 text-sm">
-            <li class="flex items-center gap-2"><i class="ph-fill ph-whatsapp-logo text-clean-brand text-lg"></i> (31) 90000-0000</li>
-            <li class="flex items-start gap-2"><i class="ph-fill ph-map-pin text-clean-brand text-lg mt-0.5"></i> Atendimento: Tupi e bairros vizinhos</li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-        <p>© 2026 Maria Limpeza Premium.</p>
-        <p>Desenvolvido por <a href="#" class="text-white hover:text-clean-brand transition font-bold">Mayan Soluções Tech</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <button onclick="abrirDrawer()" class="md:hidden fixed bottom-6 right-6 bg-clean-brand text-white p-4 rounded-full shadow-[0_10px_25px_rgba(8,145,178,0.5)] z-40 animate-bounce">
-    <i class="ph-bold ph-calendar-plus text-2xl"></i>
-  </button>
-
-  <div id="drawer-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300 flex justify-end">
-    <div id="drawer-content" class="w-full max-w-md h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col relative overflow-hidden">
-      
-      <div id="view-servico" class="flex flex-col h-full w-full absolute inset-0 bg-white transition-transform duration-300 transform">
-        <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-white z-10">
-          <h2 class="font-display text-xl font-bold text-slate-800 flex items-center gap-2"><i class="ph-fill ph-calendar-check text-clean-brand"></i> Agendamento</h2>
-          <button onclick="fecharDrawer()" class="text-slate-400 hover:text-slate-700 bg-slate-100 p-2 rounded-full"><i class="ph-bold ph-x"></i></button>
-        </div>
-        
-        <div class="flex-1 overflow-y-auto p-6 bg-slate-50">
-          <div class="mb-6">
-            <span class="text-[10px] font-bold text-clean-brand uppercase tracking-widest bg-clean-light px-2 py-1 rounded-md">Passo 1 de 2</span>
-            <h3 class="text-lg font-bold text-slate-800 mt-2">Qual serviço você precisa?</h3>
-          </div>
-
-          <div class="space-y-3 mb-8">
-            <label class="flex justify-between items-center p-4 bg-white border-2 border-slate-200 rounded-2xl cursor-pointer transition hover:border-clean-brand has-[:checked]:border-clean-brand has-[:checked]:bg-clean-bg">
-              <div class="flex items-center gap-3">
-                <input type="radio" name="tipo_servico" value="Faxina Padrão" data-preco="150" class="chk-main" onchange="atualizarTotal()">
-                <span class="font-bold text-slate-700">Faxina Padrão</span>
-              </div>
-              <span class="text-slate-500 font-medium">R$ 150</span>
-            </label>
-            <label class="flex justify-between items-center p-4 bg-white border-2 border-slate-200 rounded-2xl cursor-pointer transition hover:border-clean-brand has-[:checked]:border-clean-brand has-[:checked]:bg-clean-bg">
-              <div class="flex items-center gap-3">
-                <input type="radio" name="tipo_servico" value="Faxina Pesada (Geral)" data-preco="220" class="chk-main" onchange="atualizarTotal()">
-                <span class="font-bold text-slate-700">Faxina Pesada (Geral)</span>
-              </div>
-              <span class="text-slate-500 font-medium">R$ 220</span>
-            </label>
-          </div>
-
-          <div>
-            <h4 class="font-bold text-slate-800 mb-3 text-sm">Precisa adicionar algo mais? (Opcional)</h4>
-            <div class="bg-white rounded-2xl border border-slate-200 p-2 shadow-sm">
-              <label class="flex justify-between items-center p-3 border-b border-slate-100 cursor-pointer hover:bg-slate-50 rounded-xl transition">
-                <div class="flex items-center gap-3"><input type="checkbox" class="chk-extra" value="Passar Roupa (Até 2h)" data-preco="50" onchange="atualizarTotal()"> <span class="text-sm font-medium text-slate-600">Passar Roupa (Até 2h)</span></div>
-                <span class="text-xs text-clean-brand font-bold">+ R$ 50</span>
-              </label>
-              <label class="flex justify-between items-center p-3 border-b border-slate-100 cursor-pointer hover:bg-slate-50 rounded-xl transition">
-                <div class="flex items-center gap-3"><input type="checkbox" class="chk-extra" value="Limpeza Interior Geladeira" data-preco="30" onchange="atualizarTotal()"> <span class="text-sm font-medium text-slate-600">Interior da Geladeira</span></div>
-                <span class="text-xs text-clean-brand font-bold">+ R$ 30</span>
-              </label>
-              <label class="flex justify-between items-center p-3 cursor-pointer hover:bg-slate-50 rounded-xl transition">
-                <div class="flex items-center gap-3"><input type="checkbox" class="chk-extra" value="Limpeza Interior Armários" data-preco="40" onchange="atualizarTotal()"> <span class="text-sm font-medium text-slate-600">Interior de Armários</span></div>
-                <span class="text-xs text-clean-brand font-bold">+ R$ 40</span>
-              </label>
+                <!-- Imagem Hero com Efeito Premium -->
+                <div class="relative h-[450px] lg:h-[550px] rounded-[2.5rem] overflow-hidden shadow-pro group">
+                    <img id="hero-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80" alt="Profissional" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+                    
+                    <!-- Card Flutuante de Credibilidade -->
+                    <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-2xl border border-white/40 flex items-center gap-5 transform translate-y-2 group-hover:translate-y-0 transition duration-500">
+                        <div class="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0 border-2 border-white shadow-md">
+                            <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase font-black text-slate-400 mb-0.5 tracking-widest">Integração Direta</p>
+                            <h3 class="font-display font-bold text-slate-900 leading-tight text-[15px]">O orçamento pronto chega no seu WhatsApp.</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
+        </header>
 
-        <div class="p-6 bg-white border-t border-slate-100 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
-          <div class="flex justify-between items-end mb-4">
-            <span class="text-slate-500 text-sm font-medium">Estimativa:</span>
-            <span id="txt-estimativa" class="font-display text-3xl font-extrabold text-clean-brand">R$ 0,00</span>
-          </div>
-          <button onclick="avancarParaDados()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 rounded-xl transition flex justify-center items-center gap-2 shadow-lg">
-            Avançar <i class="ph-bold ph-arrow-right"></i>
-          </button>
-        </div>
-      </div>
+        <!-- SERVIÇOS CARDS PREMIUM -->
+        <section id="servicos" class="max-w-7xl mx-auto px-14 sm:px-24 py-20 relative">
+            <div class="text-center mb-16">
+                <span class="text-theme text-xs font-bold uppercase tracking-widest mb-3 block">Catálogo Digital</span>
+                <h2 class="text-4xl md:text-5xl font-display font-black text-slate-900">Serviços Oferecidos</h2>
+                <p class="text-slate-500 mt-4 font-medium text-lg">Selecione uma opção abaixo para ver o simulador em ação.</p>
+            </div>
 
-      <div id="view-dados" class="flex flex-col h-full w-full absolute inset-0 bg-white transition-transform duration-300 transform translate-x-full">
-        <div class="p-4 border-b border-slate-100 flex items-center gap-3 bg-white z-10 shadow-sm">
-          <button onclick="mostrarView('servico')" class="text-slate-400 hover:text-slate-700 bg-slate-50 p-2 rounded-full"><i class="ph-bold ph-arrow-left"></i></button>
-          <h2 class="font-display text-lg font-bold text-slate-800">Onde será a faxina?</h2>
-        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-servicos">
+                <!-- Preenchido via JS com cards mais refinados -->
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-slate-900 text-white mt-10 rounded-t-[3rem] mx-4 sm:mx-10 mb-0">
+            <div class="max-w-6xl mx-auto px-14 py-16 flex flex-col items-center text-center">
+                <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-6" id="footer-icon">
+                    <i class="ph-fill ph-broom text-3xl text-theme"></i>
+                </div>
+                <h3 class="font-display text-3xl font-black uppercase tracking-widest mb-2" id="footer-nome">[Nome do Profissional]</h3>
+                <p class="text-xs font-bold tracking-[0.3em] uppercase text-slate-400 mb-8">Tecnologia para Autônomos</p>
+                <div class="w-24 h-1 bg-theme rounded-full"></div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- OVERLAY E GAVETA DE AGENDAMENTO (Design Clean SaaS) -->
+    <div id="drawer-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-400" onclick="fecharGaveta()"></div>
+    
+    <div id="drawer" class="fixed top-0 right-0 w-full md:w-[480px] h-full bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-400 flex flex-col">
         
-        <div class="flex-1 overflow-y-auto p-6 bg-slate-50 space-y-5">
-          <div class="mb-2">
-            <span class="text-[10px] font-bold text-clean-brand uppercase tracking-widest bg-clean-light px-2 py-1 rounded-md">Passo 2 de 2</span>
-          </div>
-
-          <div class="bg-white border border-slate-200 p-4 rounded-2xl space-y-4 shadow-sm">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
             <div>
-              <label class="block text-xs font-bold text-slate-500 mb-1">Seu Nome</label>
-              <input type="text" id="cli-nome" placeholder="Ex: Maria Eduarda" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-clean-brand focus:ring-1 focus:ring-clean-brand text-sm text-slate-800">
+                <h3 class="font-display font-black text-2xl text-slate-900">Agendamento</h3>
+                <p class="text-xs text-slate-500 font-medium">Preencha para simular o valor</p>
+            </div>
+            <button onclick="fecharGaveta()" class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-slate-200 text-slate-500 hover:bg-slate-100 hover:text-slate-900 transition shadow-sm"><i class="ph-bold ph-x text-lg"></i></button>
+        </div>
+
+        <!-- CONTEÚDO DO FLUXO -->
+        <div class="flex-1 overflow-y-auto p-6 text-slate-600 bg-[#f8fafc]">
+            
+            <!-- Card de Resumo do Serviço -->
+            <div class="mb-8 bg-white border border-slate-200 p-5 rounded-2xl shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1 h-full bg-theme"></div>
+                <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1 pl-2">Você selecionou</p>
+                <h2 id="modal-nome-servico" class="font-display font-black text-2xl text-slate-900 leading-tight mb-2 pl-2">Nome do Serviço</h2>
+                <div class="bg-theme-light text-theme text-xs font-bold px-3 py-1 rounded-md inline-block ml-2" id="modal-valor-base">A partir de R$ 0,00</div>
             </div>
             
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-xs font-bold text-slate-500 mb-1">Data Ideal</label>
-                <input type="date" id="cli-data" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-clean-brand focus:ring-1 focus:ring-clean-brand text-sm text-slate-800 text-slate-500">
-              </div>
-              <div>
-                <label class="block text-xs font-bold text-slate-500 mb-1">Período</label>
-                <select id="cli-periodo" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-clean-brand focus:ring-1 focus:ring-clean-brand text-sm text-slate-800">
-                  <option value="Manhã (08h)">Manhã (08h)</option>
-                  <option value="Tarde (13h)">Tarde (13h)</option>
-                </select>
-              </div>
+            <div class="mb-8">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-900 mb-4 flex items-center gap-2"><i class="ph-fill ph-plus-circle text-theme text-lg"></i> Turbine seu pedido</h4>
+                <div class="space-y-3" id="modal-lista-adicionais">
+                    <!-- Preenchido via JS -->
+                </div>
             </div>
-          </div>
 
-          <div class="bg-white border border-slate-200 p-4 rounded-2xl space-y-4 shadow-sm">
-            <div>
-              <label class="block text-[11px] font-bold text-slate-500 mb-1">CEP (Preenche sozinho)</label>
-              <input type="text" id="cli-cep" onblur="buscarCep()" placeholder="00000-000" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-clean-brand text-sm">
+            <div class="mb-4">
+                <h4 class="text-xs font-bold uppercase tracking-widest text-slate-900 mb-4 flex items-center gap-2"><i class="ph-fill ph-map-pin-line text-theme text-lg"></i> Informações do Local</h4>
+                <div class="space-y-4 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                    <div>
+                        <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Seu Nome</label>
+                        <input type="text" id="cliente-nome" placeholder="Ex: Maria Antonieta" class="w-full bg-slate-50 border border-slate-200 text-slate-900 p-3 mt-1.5 rounded-xl outline-none focus:border-theme focus:ring-2 focus:ring-theme/20 transition font-medium text-sm">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Data</label>
+                            <input type="date" id="cliente-data" class="w-full bg-slate-50 border border-slate-200 text-slate-900 p-3 mt-1.5 rounded-xl outline-none focus:border-theme focus:ring-2 focus:ring-theme/20 transition font-medium text-sm">
+                        </div>
+                        <div>
+                            <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Horário</label>
+                            <input type="time" id="cliente-hora" class="w-full bg-slate-50 border border-slate-200 text-slate-900 p-3 mt-1.5 rounded-xl outline-none focus:border-theme focus:ring-2 focus:ring-theme/20 transition font-medium text-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-[11px] font-bold text-slate-500 uppercase tracking-wide">Endereço Completo</label>
+                        <input type="text" id="cliente-endereco" placeholder="Rua, Número, Bairro" class="w-full bg-slate-50 border border-slate-200 text-slate-900 p-3 mt-1.5 rounded-xl outline-none focus:border-theme focus:ring-2 focus:ring-theme/20 transition font-medium text-sm">
+                    </div>
+                </div>
             </div>
-            <div>
-              <label class="block text-[11px] font-bold text-slate-500 mb-1">Rua / Avenida</label>
-              <input type="text" id="cli-rua" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-clean-brand text-sm">
-            </div>
-            <div class="grid grid-cols-3 gap-3">
-              <div class="col-span-1">
-                <label class="block text-[11px] font-bold text-slate-500 mb-1">Número</label>
-                <input type="text" id="cli-numero" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-clean-brand text-sm">
-              </div>
-              <div class="col-span-2">
-                <label class="block text-[11px] font-bold text-slate-500 mb-1">Bairro</label>
-                <input type="text" id="cli-bairro" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-clean-brand text-sm">
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="p-6 bg-white border-t border-slate-100">
-          <button onclick="gerarAgendamento()" class="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold py-4 rounded-xl transition flex justify-center items-center gap-2 shadow-lg shadow-green-500/20">
-            <i class="ph-bold ph-whatsapp-logo text-2xl"></i> Enviar pelo WhatsApp
-          </button>
+        <!-- FOOTER DA GAVETA -->
+        <div class="p-6 border-t border-slate-200 bg-white shadow-[0_-10px_30px_rgba(0,0,0,0.05)] z-10">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Total Estimado</span>
+                <span id="valor-total-display" class="font-display text-3xl font-black text-slate-900">R$ 0,00</span>
+            </div>
+            <button onclick="enviarParaWhatsApp()" class="w-full bg-theme text-white py-4 rounded-xl font-bold uppercase tracking-widest shadow-theme hover:brightness-110 transition flex justify-center items-center gap-2 text-sm">
+                Avançar pro WhatsApp <i class="ph-bold ph-arrow-right text-lg"></i>
+            </button>
         </div>
-      </div>
-
-      <div id="view-whatsapp" class="flex flex-col h-full w-full absolute inset-0 bg-clean-wpp_bg wpp-pattern transition-transform duration-300 transform translate-x-full">
-        <div class="bg-clean-wpp_header px-4 py-3 flex items-center gap-3 shadow-md z-10 md:hidden">
-          <button onclick="mostrarView('dados')" class="text-white hover:text-clean-wpp_text p-1"><i class="ph-bold ph-arrow-left text-xl"></i></button>
-          <div class="w-10 h-10 rounded-full bg-clean-brand overflow-hidden shrink-0 flex items-center justify-center text-white">
-            <i class="ph-fill ph-sparkle text-xl"></i>
-          </div>
-          <div class="flex-1">
-            <h3 class="font-semibold text-white text-base leading-tight">Maria Limpeza</h3>
-            <p class="text-white/50 text-[11px]">Conta comercial</p>
-          </div>
-        </div>
-        <div class="flex-1 p-4 overflow-y-auto flex flex-col justify-end">
-          <div class="bg-clean-wpp_bubble text-clean-wpp_text p-3 rounded-2xl rounded-tr-none max-w-[95%] self-end shadow-sm relative mb-2">
-            <p id="texto-simulador-mobile" class="text-sm whitespace-pre-wrap leading-relaxed"></p>
-            <span class="text-[10px] text-white/50 float-right mt-1 ml-3">Agora <i class="ph-fill ph-checks text-[#53bdeb] ml-1"></i></span>
-          </div>
-        </div>
-        <div class="bg-clean-wpp_header p-3 z-10 flex flex-col gap-3">
-          <button onclick="enviarPedidoReal()" class="w-full bg-[#00A884] hover:bg-[#008f6f] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg animate-pulse">
-            <i class="ph-fill ph-paper-plane-right text-xl"></i> Enviar Agendamento Real
-          </button>
-        </div>
-      </div>
-
     </div>
-  </div>
 
-  <div id="modal-simulador-desk" class="fixed inset-0 z-[60] bg-black/90 backdrop-blur-md hidden items-center justify-center p-6 opacity-0 transition-opacity duration-300 md:hidden">
-    <div class="w-full max-w-5xl h-[85vh] bg-clean-wpp_sidebar rounded-2xl overflow-hidden shadow-2xl border border-white/10 flex">
-      <div class="w-[35%] border-r border-clean-wpp_border flex flex-col bg-clean-wpp_sidebar z-10">
-        <div class="bg-clean-wpp_header h-16 flex items-center justify-between px-4">
-          <div class="w-10 h-10 rounded-full bg-zinc-700"></div>
-          <div class="flex gap-4 text-[#AEBAC1]"><i class="ph-fill ph-users text-xl"></i><i class="ph-fill ph-chat-teardrop-text text-xl"></i></div>
-        </div>
-        <div class="flex-1 overflow-y-auto">
-          <div class="flex items-center gap-3 px-4 py-3 bg-[#2A3942] cursor-pointer">
-            <div class="w-12 h-12 rounded-full bg-clean-brand flex items-center justify-center text-white shrink-0"><i class="ph-fill ph-sparkle text-2xl"></i></div>
-            <div class="flex-1 border-b border-clean-wpp_border pb-3">
-              <div class="flex justify-between items-center"><h4 class="text-white text-base">Maria Limpeza</h4><span class="text-[#00A884] text-xs">Agora</span></div>
-              <p class="text-white/60 text-sm truncate">Solicitação de agendame...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="w-[65%] flex flex-col bg-clean-wpp_bg wpp-pattern relative">
-        <div class="bg-clean-wpp_header h-16 flex items-center justify-between px-4 z-10">
-          <div class="flex items-center gap-4">
-            <div class="w-10 h-10 rounded-full bg-clean-brand flex items-center justify-center text-white shrink-0"><i class="ph-fill ph-sparkle text-xl"></i></div>
-            <div><h3 class="text-white font-medium">Maria Limpeza</h3><p class="text-white/50 text-xs">Conta comercial</p></div>
-          </div>
-          <button onclick="fecharSimuladorDesk()" class="text-red-400 hover:text-red-300 text-sm font-bold transition">Cancelar</button>
-        </div>
-        <div class="flex-1 p-8 overflow-y-auto flex flex-col justify-end">
-          <div class="bg-[#182229] text-[#8696A0] text-xs font-medium px-4 py-2 rounded-lg self-center mb-6 uppercase tracking-widest shadow-md">Pré-visualização</div>
-          <div class="bg-clean-wpp_bubble text-clean-wpp_text p-4 rounded-xl rounded-tr-none max-w-[80%] self-end shadow-md relative mb-4">
-            <p id="texto-simulador-desktop" class="text-[15px] whitespace-pre-wrap leading-relaxed font-sans"></p>
-            <div class="text-[11px] text-white/50 text-right mt-2">Agora <i class="ph-fill ph-checks text-[#53bdeb] ml-1"></i></div>
-          </div>
-        </div>
-        <div class="bg-clean-wpp_header p-4 z-10 flex items-center gap-4">
-          <div class="flex-1 bg-[#2A3942] rounded-lg px-4 py-3 text-white/40 text-sm">Mensagem montada automaticamente...</div>
-          <button onclick="enviarPedidoReal()" class="bg-[#00A884] hover:bg-[#008f6f] text-white w-12 h-12 rounded-full flex items-center justify-center transition shadow-lg hover:scale-110">
-            <i class="ph-fill ph-paper-plane-tilt text-xl"></i>
-          </button>
-        </div>
-      </div>
+    <!-- ALERTA CUSTOM -->
+    <div id="alerta" class="fixed top-5 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-4 rounded-xl shadow-2xl z-[100] transform -translate-y-32 transition-transform duration-400 flex items-center gap-3 font-medium text-sm border-l-4 border-red-500">
+        <i class="ph-fill ph-warning-circle text-red-500 text-2xl"></i>
+        <span id="alerta-texto"></span>
     </div>
-  </div>
 
-  <script>
-    const NUMERO_WHATSAPP = "5531980159559"; 
-    let valorTotal = 0;
+    <!-- MOCKUPS (SIMULADOR WHATSAPP WEB E MOBILE) BEM REALÍSTICO -->
+    <div id="whatsapp-simulator" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center transition-opacity duration-300 opacity-0 bg-slate-900/90 backdrop-blur-md p-4 md:p-6 font-sans">
+        
+        <!-- Toggle Control Desktop/Mobile -->
+        <div class="bg-slate-800/80 backdrop-blur-md p-1.5 rounded-full flex gap-1 mb-6 shadow-xl border border-white/10 z-20">
+            <button onclick="setMockupView('mobile')" id="btn-view-mobile" class="px-6 py-2 rounded-full text-sm font-bold bg-white text-slate-900 transition-all flex items-center gap-2"><i class="ph-bold ph-device-mobile"></i> Celular</button>
+            <button onclick="setMockupView('pc')" id="btn-view-pc" class="px-6 py-2 rounded-full text-sm font-bold text-white hover:bg-white/10 transition-all flex items-center gap-2"><i class="ph-bold ph-desktop"></i> PC (WhatsApp Web)</button>
+        </div>
 
-    const formatarMoeda = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        <!-- Container do Dispositivo (Muda de tamanho baseado na visão) -->
+        <div id="wa-device-frame" class="device-transition relative bg-[#0b141a] rounded-[2.5rem] w-full max-w-[400px] h-[85vh] shadow-2xl border-[6px] border-slate-800 overflow-hidden flex flex-col shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+            
+            <!-- Simulador Top Notch do Celular (Sumi no PC) -->
+            <div id="wa-mobile-notch" class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-2xl z-50"></div>
 
-    /* CONTROLE VIEWS DA GAVETA */
-    const overlay = document.getElementById('drawer-overlay');
-    const content = document.getElementById('drawer-content');
-    const modalDesk = document.getElementById('modal-simulador-desk');
-    
-    const views = {
-      servico: document.getElementById('view-servico'),
-      dados: document.getElementById('view-dados'),
-      whatsapp: document.getElementById('view-whatsapp')
-    };
+            <!-- Header estilo MacOS (Aparece só no PC) -->
+            <div id="wa-mac-header" class="hidden h-8 bg-[#202c33] border-b border-white/5 items-center px-4 gap-2 shrink-0 w-full z-20">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            </div>
 
-    function mostrarView(viewName) {
-      overlay.classList.remove('pointer-events-none', 'opacity-0');
-      content.classList.remove('translate-x-full');
-      
-      Object.keys(views).forEach(key => {
-        if(key === viewName) views[key].classList.remove('translate-x-full');
-        else views[key].classList.add('translate-x-full');
-      });
-    }
+            <!-- Estrutura Interna do App -->
+            <div class="flex flex-1 w-full h-full overflow-hidden relative">
+                
+                <!-- SIDEBAR WHATSAPP WEB (Só aparece na visão PC) -->
+                <div id="wa-sidebar" class="hidden w-[350px] flex-col border-r border-white/10 bg-[#111b21] shrink-0 h-full">
+                    <!-- Header Sidebar -->
+                    <div class="bg-[#202c33] h-16 px-4 flex items-center justify-between shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-slate-700 overflow-hidden"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Sua Foto" class="w-full h-full object-cover opacity-70"></div>
+                        <div class="flex gap-4 text-[#aebac1]"><i class="ph-bold ph-users text-xl"></i><i class="ph-bold ph-circle-dashed text-xl"></i><i class="ph-bold ph-chat-centered-text text-xl"></i><i class="ph-bold ph-dots-three-vertical text-xl"></i></div>
+                    </div>
+                    <!-- Search -->
+                    <div class="p-2 border-b border-white/5"><div class="bg-[#202c33] rounded-lg h-9 flex items-center px-3 text-[#aebac1] text-sm"><i class="ph-bold ph-magnifying-glass mr-3"></i> Pesquisar ou começar uma nova conversa</div></div>
+                    <!-- Chat List Fake -->
+                    <div class="flex-1 overflow-y-auto">
+                        <div class="flex items-center p-3 hover:bg-[#202c33] cursor-pointer bg-[#2a3942]"><div class="w-12 h-12 rounded-full bg-theme text-white flex items-center justify-center shrink-0 mr-3" id="zap-icone-side"><i class="ph-fill ph-broom text-xl"></i></div><div class="flex-1 border-b border-white/5 pb-3"><div class="flex justify-between"><span class="text-white font-medium text-sm" id="zap-nome-side">Profissional</span><span class="text-[#00a884] text-xs">Agora</span></div><p class="text-sm text-[#aebac1] truncate">Novo Agendamento Recebido!</p></div></div>
+                        <div class="flex items-center p-3 hover:bg-[#202c33] cursor-pointer"><div class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center shrink-0 mr-3"><span class="text-white font-bold">C</span></div><div class="flex-1 border-b border-white/5 pb-3"><div class="flex justify-between"><span class="text-white font-medium text-sm">Cliente Anterior</span><span class="text-[#aebac1] text-xs">10:30</span></div><p class="text-sm text-[#aebac1] truncate">Muito obrigado pelo serviço, ficou ótimo.</p></div></div>
+                        <div class="flex items-center p-3 hover:bg-[#202c33] cursor-pointer"><div class="w-12 h-12 rounded-full bg-pink-600 flex items-center justify-center shrink-0 mr-3"><span class="text-white font-bold">M</span></div><div class="flex-1 border-b border-white/5 pb-3"><div class="flex justify-between"><span class="text-white font-medium text-sm">Mãe</span><span class="text-[#aebac1] text-xs">Ontem</span></div><p class="text-sm text-[#aebac1] truncate">Vem jantar hoje?</p></div></div>
+                    </div>
+                </div>
 
-    function fecharDrawer() {
-      overlay.classList.add('opacity-0');
-      content.classList.add('translate-x-full');
-      setTimeout(() => overlay.classList.add('pointer-events-none'), 300);
-    }
+                <!-- CHAT AREA PRINCIPAL (Usado no Celular e no PC) -->
+                <div class="flex-1 flex flex-col h-full bg-[#0b141a] relative">
+                    <!-- Header Chat -->
+                    <div class="bg-[#202c33] px-4 py-2.5 h-16 flex items-center gap-3 shrink-0 shadow-md z-10 w-full relative">
+                        <button onclick="fecharWhatsAppSimulado()" class="text-white p-1 hover:bg-white/10 rounded-full transition md:hidden" id="btn-back-mobile"><i class="ph-bold ph-arrow-left text-xl"></i></button>
+                        <div class="w-10 h-10 bg-theme text-white rounded-full flex items-center justify-center overflow-hidden shrink-0" id="zap-icone">
+                            <i class="ph-fill ph-broom text-xl"></i>
+                        </div>
+                        <div class="flex-1 leading-tight">
+                            <h4 class="text-[#e9edef] font-medium text-[16px] whitespace-nowrap overflow-hidden text-ellipsis" id="zap-nome">[Nome do Profissional]</h4>
+                            <p class="text-[#8696a0] text-[13px]">visto por último hoje às 14:20</p>
+                        </div>
+                        <div class="flex items-center gap-5 text-[#aebac1]">
+                            <i class="ph-fill ph-video-camera text-xl hidden sm:block"></i>
+                            <i class="ph-bold ph-magnifying-glass text-xl"></i>
+                            <i class="ph-bold ph-dots-three-vertical text-xl"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Corpo da Mensagem -->
+                    <div class="flex-1 overflow-y-auto p-4 md:px-10 md:py-6 relative flex flex-col justify-end pb-8">
+                        <div class="absolute inset-0 opacity-[0.06] pointer-events-none wa-bg"></div>
+                        
+                        <div class="flex justify-center mb-6 relative z-10 mt-auto">
+                            <span class="bg-[#182229] text-[#8696a0] px-3 py-1.5 text-[12px] rounded-lg shadow-sm uppercase font-bold tracking-wide">Hoje</span>
+                        </div>
+                        
+                        <div class="flex justify-end mb-2 relative z-10 w-full">
+                            <div class="bg-[#005c4b] text-[#e9edef] px-3 pt-2 pb-6 rounded-xl rounded-tr-none shadow-sm text-[14.5px] relative leading-[1.4] max-w-[95%] sm:max-w-[85%] font-sans" id="whatsapp-message-content">
+                                <!-- Conteúdo gerado -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Footer Chat Input -->
+                    <div class="bg-[#202c33] px-3 py-3 h-16 flex items-center gap-3 shrink-0 w-full relative">
+                        <div class="flex gap-4 text-[#8696a0]"><i class="ph-fill ph-smiley text-2xl"></i><i class="ph-bold ph-paperclip text-2xl hidden sm:block"></i></div>
+                        <div class="bg-[#2a3942] flex-1 rounded-lg px-4 py-2.5 text-[#8696a0] text-[15px]">Mensagem</div>
+                        <div class="text-[#8696a0]"><i class="ph-fill ph-microphone text-2xl"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="fecharWhatsAppSimulado()" class="absolute top-4 right-4 bg-red-500/80 hover:bg-red-500 text-white w-8 h-8 rounded-full hidden items-center justify-center z-[60] shadow-lg" id="btn-close-pc"><i class="ph-bold ph-x"></i></button>
+        </div>
+    </div>
 
-    function abrirDrawer() {
-      atualizarTotal();
-      mostrarView('servico');
-    }
+    <!-- SCRIPT MULTI-TEMPLATES E SIMULADOR -->
+    <script>
+        // BANCO DE DADOS DOS PROFISSIONAIS PARA DEMONSTRAÇÃO
+        const profissionais = [
+            {
+                id: 'diarista',
+                nome: '[Nome da Diarista]',
+                cargo: 'Limpeza Residencial & Comercial',
+                icone: 'ph-broom',
+                theme: '#06b6d4', // Cyan
+                themeLight: '#ecfeff',
+                heroTitle: 'Deixe a limpeza pesada <span class="text-theme">comigo.</span>',
+                heroDesc: 'Agende sua diária de forma rápida e prática pelo celular. Sua casa limpa e cheirosa sem nenhuma dor de cabeça.',
+                img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
+                servicos: [
+                    { nome: 'Diária Completa', preco: 180, desc: 'Até 8 horas. Limpeza detalhada de todos os cômodos e janelas.' },
+                    { nome: 'Meio Período', preco: 100, desc: 'Até 4 horas. Ideal para apartamentos ou limpeza de manutenção.' },
+                    { nome: 'Limpeza Pós-Obra', preco: 300, desc: 'Limpeza pesada para remover poeira fina, gesso e respingos de tinta.' }
+                ],
+                adicionais: [
+                    { nome: 'Passar Roupas (Cesto Cheio)', preco: 50 },
+                    { nome: 'Limpeza de Geladeira/Forno', preco: 40 },
+                    { nome: 'Lavar Área Externa', preco: 30 }
+                ]
+            },
+            {
+                id: 'baba',
+                nome: '[Nome da Babá]',
+                cargo: 'Babá & Cuidadora Infantil',
+                icone: 'ph-baby',
+                theme: '#f43f5e', // Rose
+                themeLight: '#fff1f2',
+                heroTitle: 'Cuidado e diversão para quem você <span class="text-theme">mais ama.</span>',
+                heroDesc: 'Tranquilidade para os pais com um atendimento carinhoso, seguro e muito responsável. Seu filho em ótimas mãos.',
+                img: 'https://images.unsplash.com/photo-1544289528-98e9fc7e6008?auto=format&fit=crop&w=1200&q=80',
+                servicos: [
+                    { nome: 'Diária Avulsa (Dia)', preco: 150, desc: 'Período diurno. Atividades lúdicas, alimentação e rotina de higiene.' },
+                    { nome: 'Diária Fim de Semana', preco: 250, desc: 'Sábado ou Domingo para os pais terem aquele descanso merecido.' },
+                    { nome: 'Pernoite', preco: 200, desc: 'Das 20h às 08h do dia seguinte. Cuidado noturno garantido para o bebê.' }
+                ],
+                adicionais: [
+                    { nome: 'Preparar Refeições', preco: 40 },
+                    { nome: 'Auxílio na Tarefa Escolar', preco: 30 }
+                ]
+            },
+            {
+                id: 'eletricista',
+                nome: '[Nome do Eletricista]',
+                cargo: 'Eletricista Residencial',
+                icone: 'ph-lightning',
+                theme: '#f59e0b', // Amber
+                themeLight: '#fffbeb',
+                heroTitle: 'Soluções elétricas rápidas e <span class="text-theme">seguras.</span>',
+                heroDesc: 'Instalações, reparos e manutenções com qualidade e dentro da norma. Evite curtos-circuitos em casa.',
+                img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
+                servicos: [
+                    { nome: 'Instalação de Chuveiro', preco: 80, desc: 'Troca de resistência ou instalação completa de chuveiro elétrico.' },
+                    { nome: 'Troca de Tomadas (Até 5)', preco: 100, desc: 'Substituição de espelhos e miolos de tomadas padronizadas.' },
+                    { nome: 'Visita de Orçamento', preco: 50, desc: 'Avaliação presencial do problema (Abatido se fechar o serviço final).' }
+                ],
+                adicionais: [
+                    { nome: 'Atendimento de Emergência (24h)', preco: 80 },
+                    { nome: 'Trocar Disjuntor Queimado', preco: 45 }
+                ]
+            },
+            {
+                id: 'garcom',
+                nome: '[Nome do Barman]',
+                cargo: 'Garçom & Bartender VIP',
+                icone: 'ph-martini',
+                theme: '#8b5cf6', // Violet
+                themeLight: '#f5f3ff',
+                heroTitle: 'Serviço impecável para o seu <span class="text-theme">evento.</span>',
+                heroDesc: 'Garanta o sucesso da sua festa. Atendimento premium e drinks perfeitos para seus convidados.',
+                img: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80',
+                servicos: [
+                    { nome: 'Diária Bartender (6 horas)', preco: 250, desc: 'Preparo de drinks clássicos e autorais. Serviço de barman completo.' },
+                    { nome: 'Diária Garçom (5 horas)', preco: 150, desc: 'Serviço de bandeja volante, recolhimento de louças e reposição.' },
+                    { nome: 'Equipe Dupla (Garçom+Barman)', preco: 380, desc: 'O combo perfeito para garantir que ninguém fique de copo vazio.' }
+                ],
+                adicionais: [
+                    { nome: 'Levar Kit Coqueteleira e Taças', preco: 50 },
+                    { nome: 'Hora Extra Adicional', preco: 40 }
+                ]
+            }
+        ];
 
-    function abrirDrawerComServico(nome, preco) {
-      const radios = document.querySelectorAll('.chk-main');
-      radios.forEach(r => {
-        if(r.value === nome) r.checked = true;
-      });
-      abrirDrawer();
-    }
+        let indexAtual = 0;
+        let servicoAtual = "";
+        let precoBaseAtual = 0;
+        let totalAtual = 0;
+        let viewAtual = 'mobile'; // Controle do mockup do Zap
 
-    function atualizarTotal() {
-      valorTotal = 0;
-      const principal = document.querySelector('.chk-main:checked');
-      if (principal) valorTotal += parseFloat(principal.getAttribute('data-preco'));
-      
-      document.querySelectorAll('.chk-extra:checked').forEach(cb => {
-        valorTotal += parseFloat(cb.getAttribute('data-preco'));
-      });
+        // FUNÇÃO DE TROCAR PROFISSÃO MÁGICA
+        function mudarProfissao(direcao) {
+            indexAtual += direcao;
+            if (indexAtual >= profissionais.length) indexAtual = 0;
+            if (indexAtual < 0) indexAtual = profissionais.length - 1;
 
-      document.getElementById('txt-estimativa').textContent = formatarMoeda(valorTotal);
-    }
+            const prof = profissionais[indexAtual];
+            const content = document.getElementById('conteudo-dinamico');
+            
+            content.classList.add('fade-out');
 
-    function avancarParaDados() {
-      if(!document.querySelector('.chk-main:checked')) {
-        alert("Por favor, selecione qual faxina você deseja (Padrão ou Pesada).");
-        return;
-      }
-      mostrarView('dados');
-    }
+            setTimeout(() => {
+                // Atualizar Tema
+                document.documentElement.style.setProperty('--theme-color', prof.theme);
+                document.documentElement.style.setProperty('--theme-light', prof.themeLight);
+                
+                // Textos da Navbar e Footer
+                const iconeHtml = `<i class="ph-fill ${prof.icone} text-xl sm:text-2xl"></i>`;
+                document.getElementById('nav-icon').innerHTML = iconeHtml;
+                document.getElementById('nav-nome').innerText = prof.nome;
+                document.getElementById('nav-cargo').innerText = prof.cargo;
+                document.getElementById('footer-icon').innerHTML = `<i class="ph-fill ${prof.icone} text-3xl text-theme"></i>`;
+                document.getElementById('footer-nome').innerText = prof.nome;
+                
+                // Textos da Hero Section
+                document.getElementById('hero-title').innerHTML = prof.heroTitle;
+                document.getElementById('hero-desc').innerText = prof.heroDesc;
+                document.getElementById('hero-img').src = prof.img;
 
-    async function buscarCep() {
-      const cep = document.getElementById('cli-cep').value.replace(/\D/g, '');
-      if (cep.length === 8) {
-        try {
-          const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
-          const data = await response.json();
-          if (!data.erro) {
-            document.getElementById('cli-rua').value = data.logradouro;
-            document.getElementById('cli-bairro').value = data.bairro;
-            document.getElementById('cli-numero').focus();
-          }
-        } catch (error) { console.log('Erro CEP'); }
-      }
-    }
+                // WhatsApp Icons
+                document.getElementById('zap-icone').innerHTML = iconeHtml;
+                document.getElementById('zap-nome').innerText = prof.nome;
+                document.getElementById('zap-icone-side').innerHTML = iconeHtml;
+                document.getElementById('zap-nome-side').innerText = prof.nome;
 
-    function gerarAgendamento() {
-      const principal = document.querySelector('.chk-main:checked').value;
-      const extras = document.querySelectorAll('.chk-extra:checked');
-      const nome = document.getElementById('cli-nome').value.trim();
-      let data = document.getElementById('cli-data').value;
-      const periodo = document.getElementById('cli-periodo').value;
-      const rua = document.getElementById('cli-rua').value.trim();
-      const num = document.getElementById('cli-numero').value.trim();
-      const bairro = document.getElementById('cli-bairro').value.trim();
+                // Grid de Serviços
+                const grid = document.getElementById('grid-servicos');
+                grid.innerHTML = '';
+                prof.servicos.forEach(serv => {
+                    grid.innerHTML += `
+                        <div class="bg-white border border-slate-200 p-8 rounded-3xl hover:border-theme shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-theme transition duration-500 group flex flex-col relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-slate-100 group-hover:bg-theme transition duration-500"></div>
+                            <h3 class="font-display font-black text-2xl text-slate-900 mb-3">${serv.nome}</h3>
+                            <p class="text-[15px] text-slate-500 font-medium mb-8 flex-1 leading-relaxed">${serv.desc}</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <div>
+                                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Valor Inicial</p>
+                                    <p class="text-theme font-black text-2xl">R$ ${serv.preco.toFixed(2).replace('.', ',')}</p>
+                                </div>
+                                <button onclick="iniciarAgendamento('${serv.nome}', ${serv.preco})" class="w-12 h-12 rounded-full bg-slate-50 border border-slate-200 text-slate-400 flex items-center justify-center group-hover:bg-theme group-hover:text-white group-hover:border-theme transition duration-300">
+                                    <i class="ph-bold ph-plus text-xl"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
 
-      if(!nome || !rua || !num || !data) {
-        alert("Preencha seu nome, endereço completo e a data desejada para avançar!");
-        return;
-      }
+                content.classList.remove('fade-out');
+            }, 400);
+        }
 
-      // Format Date to DD/MM/YYYY
-      const dateParts = data.split('-');
-      data = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+        mudarProfissao(0);
 
-      let texto = "✨ *SOLICITAÇÃO DE AGENDAMENTO*\n\n";
-      texto += `👤 *Nome:* ${nome}\n`;
-      texto += `📅 *Data:* ${data} - ${periodo}\n\n`;
-      
-      texto += `🧹 *Serviço Escolhido:*\n▪️ ${principal}\n`;
-      if(extras.length > 0) {
-        texto += `\n➕ *Adicionais:*\n`;
-        extras.forEach(cb => texto += `▪️ ${cb.value}\n`);
-      }
-      
-      texto += `\n💰 *Valor Estimado: ${formatarMoeda(valorTotal)}*\n\n`;
-      
-      texto += "📍 *Endereço do Local:*\n";
-      texto += `${rua}, Nº ${num} - ${bairro}\n`;
+        function formatarMoeda(valor) { return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); }
 
-      texto += `\n_Aguardando confirmação de disponibilidade da agenda..._`;
+        function iniciarAgendamento(nome, preco) {
+            const prof = profissionais[indexAtual];
+            servicoAtual = nome;
+            precoBaseAtual = preco;
+            
+            document.getElementById('modal-nome-servico').innerText = nome;
+            document.getElementById('modal-valor-base').innerText = `Valor base: ${formatarMoeda(preco)}`;
+            
+            const listaAdicionais = document.getElementById('modal-lista-adicionais');
+            listaAdicionais.innerHTML = '';
+            
+            prof.adicionais.forEach(add => {
+                listaAdicionais.innerHTML += `
+                    <label class="flex items-center justify-between cursor-pointer group p-4 border border-slate-200 rounded-xl hover:border-theme hover:bg-theme-light/30 bg-white transition shadow-sm">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" class="hidden custom-checkbox" value="${add.nome}" data-preco="${add.preco}" onchange="atualizarTotal()">
+                            <div class="w-5 h-5 border-2 border-slate-300 rounded flex items-center justify-center transition"><i class="ph-bold ph-check text-white text-[11px] opacity-0 transition transform scale-50"></i></div>
+                            <span class="text-sm font-bold text-slate-700">${add.nome}</span>
+                        </div>
+                        <span class="text-sm text-theme font-black">+ R$ ${add.preco.toFixed(2).replace('.', ',')}</span>
+                    </label>
+                `;
+            });
 
-      document.getElementById('texto-simulador-mobile').textContent = texto;
-      document.getElementById('texto-simulador-desktop').textContent = texto;
+            document.getElementById('cliente-nome').value = '';
+            document.getElementById('cliente-data').value = '';
+            document.getElementById('cliente-hora').value = '';
+            document.getElementById('cliente-endereco').value = '';
+            
+            atualizarTotal();
 
-      if (window.innerWidth >= 768) {
-        fecharDrawer();
-        modalDesk.classList.remove('hidden');
-        modalDesk.classList.add('md:flex');
-        setTimeout(() => modalDesk.classList.remove('opacity-0'), 10);
-      } else {
-        mostrarView('whatsapp');
-      }
-    }
+            document.getElementById('drawer-overlay').classList.remove('hidden');
+            setTimeout(() => document.getElementById('drawer-overlay').classList.remove('opacity-0'), 10);
+            document.getElementById('drawer').classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden';
+        }
 
-    function fecharSimuladorDesk() {
-      modalDesk.classList.add('opacity-0');
-      setTimeout(() => {
-        modalDesk.classList.add('hidden');
-        modalDesk.classList.remove('md:flex');
-        abrirDrawer();
-        mostrarView('dados');
-      }, 300);
-    }
+        function fecharGaveta() {
+            document.getElementById('drawer').classList.add('translate-x-full');
+            document.getElementById('drawer-overlay').classList.add('opacity-0');
+            setTimeout(() => document.getElementById('drawer-overlay').classList.add('hidden'), 400); 
+            document.body.style.overflow = 'auto'; 
+        }
 
-    function enviarPedidoReal() {
-      const textoMensagem = document.getElementById('texto-simulador-desktop').textContent;
-      const textoCodificado = encodeURIComponent(textoMensagem);
-      window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${textoCodificado}`, '_blank');
-      
-      fecharDrawer();
-      if(!modalDesk.classList.contains('hidden')) fecharSimuladorDesk();
-      
-      document.querySelectorAll('input[type="text"], input[type="date"]').forEach(i => i.value = '');
-      document.querySelectorAll('.chk-main, .chk-extra').forEach(cb => cb.checked = false);
-      atualizarTotal();
-    }
-  </script>
+        function atualizarTotal() {
+            let totalAdicionais = 0;
+            document.querySelectorAll('.custom-checkbox:checked').forEach(cb => { totalAdicionais += parseFloat(cb.getAttribute('data-preco')); });
+            totalAtual = precoBaseAtual + totalAdicionais;
+            document.getElementById('valor-total-display').innerText = formatarMoeda(totalAtual);
+        }
+
+        function mostrarErro(msg) {
+            const alerta = document.getElementById('alerta');
+            document.getElementById('alerta-texto').innerText = msg;
+            alerta.classList.remove('-translate-y-32');
+            alerta.classList.add('translate-y-5');
+            setTimeout(() => { alerta.classList.remove('translate-y-5'); alerta.classList.add('-translate-y-32'); }, 3500);
+        }
+
+        function enviarParaWhatsApp() {
+            const nome = document.getElementById('cliente-nome').value.trim();
+            const data = document.getElementById('cliente-data').value;
+            const hora = document.getElementById('cliente-hora').value;
+            const endereco = document.getElementById('cliente-endereco').value.trim();
+            const prof = profissionais[indexAtual];
+
+            if(!nome || !data || !hora || !endereco) {
+                mostrarErro("Preencha todos os campos obrigatórios na seção 'Quando e Onde?'.");
+                return;
+            }
+
+            const dataParts = data.split('-');
+            const dataFormatada = `${dataParts[2]}/${dataParts[1]}/${dataParts[0]}`;
+
+            let adicionais = [];
+            document.querySelectorAll('.custom-checkbox:checked').forEach(cb => { adicionais.push(cb.value); });
+
+            let mensagem = `*✅ NOVO AGENDAMENTO - ${prof.nome.toUpperCase()}*\n-----------------------------------\n`;
+            mensagem += `👤 *Cliente:* ${nome}\n`;
+            mensagem += `🛠️ *Serviço:* ${servicoAtual}\n`;
+            if(adicionais.length > 0) { mensagem += `➕ *Extras:* \n- ${adicionais.join('\n- ')}\n`; }
+            mensagem += `\n📅 *Data:* ${dataFormatada} às ${hora}\n`;
+            mensagem += `📍 *Endereço:* ${endereco}\n`;
+            mensagem += `-----------------------------------\n`;
+            mensagem += `💰 *Estimativa:* ${formatarMoeda(totalAtual)}\n\n`;
+            mensagem += `_Gostaria de confirmar esse horário com você!_`;
+
+            let msgHtml = mensagem
+                .replace(/\n/g, '<br>')
+                .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
+                .replace(/_(.*?)_/g, '<em>$1</em>');
+            msgHtml += `<span class="absolute bottom-1 right-2 text-[11px] text-white/60 flex items-center gap-[2px]">agora <i class="ph-fill ph-checks text-[#53bdeb] text-sm"></i></span>`;
+
+            document.getElementById('whatsapp-message-content').innerHTML = msgHtml;
+
+            fecharGaveta();
+            abrirWhatsAppSimulado();
+        }
+
+        // --- CONTROLE DE VISUALIZAÇÃO MOCKUP WHATSAPP (PC vs MOBILE) --- //
+        function setMockupView(viewType) {
+            const frame = document.getElementById('wa-device-frame');
+            const macHeader = document.getElementById('wa-mac-header');
+            const sidebar = document.getElementById('wa-sidebar');
+            const btnMobile = document.getElementById('btn-view-mobile');
+            const btnPc = document.getElementById('btn-view-pc');
+            const btnBackMobile = document.getElementById('btn-back-mobile');
+            const btnClosePc = document.getElementById('btn-close-pc');
+            const notch = document.getElementById('wa-mobile-notch');
+
+            viewAtual = viewType;
+
+            // Reset de estilos botões
+            btnMobile.className = "px-6 py-2 rounded-full text-sm font-bold text-white hover:bg-white/10 transition-all flex items-center gap-2";
+            btnPc.className = "px-6 py-2 rounded-full text-sm font-bold text-white hover:bg-white/10 transition-all flex items-center gap-2";
+
+            if(viewType === 'pc') {
+                // Configurar PC
+                btnPc.className = "px-6 py-2 rounded-full text-sm font-bold bg-white text-slate-900 transition-all flex items-center gap-2 shadow-sm";
+                frame.className = "device-transition relative bg-[#0b141a] rounded-xl w-full max-w-[1000px] h-[80vh] shadow-[0_20px_60px_rgba(0,0,0,0.6)] border border-slate-700 overflow-hidden flex flex-col mt-4";
+                macHeader.classList.remove('hidden');
+                macHeader.classList.add('flex');
+                sidebar.classList.remove('hidden');
+                sidebar.classList.add('flex');
+                btnBackMobile.classList.add('hidden');
+                notch.classList.add('hidden');
+                
+                // Mostrar botão de fechar pro PC
+                btnClosePc.classList.remove('hidden');
+                btnClosePc.classList.add('flex');
+            } else {
+                // Configurar Mobile
+                btnMobile.className = "px-6 py-2 rounded-full text-sm font-bold bg-white text-slate-900 transition-all flex items-center gap-2 shadow-sm";
+                frame.className = "device-transition relative bg-[#0b141a] rounded-[2.5rem] w-full max-w-[380px] h-[85vh] shadow-[0_0_50px_rgba(0,0,0,0.5)] border-[6px] border-slate-800 overflow-hidden flex flex-col mt-2";
+                macHeader.classList.add('hidden');
+                macHeader.classList.remove('flex');
+                sidebar.classList.add('hidden');
+                sidebar.classList.remove('flex');
+                btnBackMobile.classList.remove('hidden');
+                notch.classList.remove('hidden');
+                
+                // Esconder botão fechar PC
+                btnClosePc.classList.add('hidden');
+                btnClosePc.classList.remove('flex');
+            }
+        }
+
+        function abrirWhatsAppSimulado() { 
+            const simulator = document.getElementById('whatsapp-simulator');
+            simulator.classList.remove('hidden'); 
+            simulator.classList.add('flex'); 
+            
+            // Garantir que abre na view que estava, se tiver tela grande tenta PC
+            if(window.innerWidth > 768 && viewAtual === 'mobile') {
+                setMockupView('pc');
+            } else if (window.innerWidth <= 768) {
+                setMockupView('mobile');
+                document.getElementById('btn-view-pc').style.display = 'none'; // Some com botão de PC no celular de verdade
+            }
+
+            setTimeout(() => { simulator.classList.remove('opacity-0'); }, 10); 
+        }
+
+        function fecharWhatsAppSimulado() { 
+            const simulator = document.getElementById('whatsapp-simulator');
+            simulator.classList.add('opacity-0'); 
+            setTimeout(() => { simulator.classList.add('hidden'); simulator.classList.remove('flex'); }, 300); 
+        }
+    </script>
 </body>
 </html>
